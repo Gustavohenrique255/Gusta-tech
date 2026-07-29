@@ -237,40 +237,277 @@ document.addEventListener("DOMContentLoaded", function () {
     atualizarBotoesSalvos();
 });
 
-// Banco de Dados do Sorteador de Jogos (Indicações)
+// =========================================================
+// BANCO DE DADOS COM 50 JOGOS VARIADOS PARA O SORTEADOR
+// =========================================================
 const jogosParaIndicar = [
     {
         nome: "Minecraft (Java Edition)",
         genero: "Sandbox / Sobrevivência",
-        sinopse: "Você acorda em um mundo infinito gerado por blocos. Sem tutoriais ou objetivos impostos, precisa explorar cavernas, coletar recursos e construir abrigo antes do anoitecer, quando criaturas hostis surgem."
+        sinopse: "Você acorda em um mundo infinito gerado por blocos. Sem tutoriais impostos, precisa explorar cavernas, coletar recursos e construir abrigos antes que as criaturas da noite apareçam."
     },
     {
         nome: "The Witcher 3: Wild Hunt",
         genero: "RPG / Mundo Aberto",
-        sinopse: "Geralt de Rívia é um caçador de monstros mutante em um mundo devastado pela guerra. Ele precisa encontrar Ciri, sua filha adotiva que possui um poder antigo capaz de manipular o espaço e o tempo."
+        sinopse: "Geralt de Rívia é um caçador de monstros mutante procurando por sua filha adotiva Ciri, que está sendo perseguida por uma horda de cavaleiros espectrais conhecida como Caçada Selvagem."
     },
     {
         nome: "Hollow Knight",
         genero: "Metroidvania / Ação",
-        sinopse: "Um cavaleiro silencioso adentra as ruínas de Hallownest, um antigo reino de insetos subterrâneo que caiu em desgraça devido a uma infecção luminosa."
+        sinopse: "Um cavaleiro silencioso adentra o reino esquecido de Hallownest para desvendar os segredos de uma infecção luminosa que enlouqueceu todos os seus habitantes."
     },
     {
         nome: "Elden Ring",
-        genero: "Soulslike / Ação",
-        sinopse: "Nas Terras Intermédias, o Anel de Prístino foi despedaçado, corrompendo os semideuses com seus fragmentos de poder. Como um Maculado banido, você retorna para explorar reinos vastos."
+        genero: "Soulslike / RPG de Ação",
+        sinopse: "Nas Terras Intermédias, o Anel de Prístino foi destruído. Como um Maculado, você deve derrotar semideuses corrompidos e reivindicar o trono do Lorde Prístino."
     },
     {
         nome: "Cyberpunk 2077",
-        genero: "RPG de Ficção Científica",
-        sinopse: "Na perigosa cidade de Night City, você joga com V, um mercenário contratado para roubar um biochip experimental contendo a mente do falecido roqueiro rebelde Johnny Silverhand."
+        genero: "RPG / Ficção Científica",
+        sinopse: "Na metrópole futurista de Night City, o mercenário V acidentalmente instala um biochip com a consciência do falecido roqueiro rebelde Johnny Silverhand, iniciando uma corrida contra o tempo pela sobrevivência."
+    },
+    {
+        nome: "Red Dead Redemption 2",
+        genero: "Ação / Mundo Aberto Ocidental",
+        sinopse: "Arthur Morgan é um membro da gangue Van der Linde em fuga da lei no fim da era do Velho Oeste americano, lutando entre a lealdade aos seus companheiros e seus próprios princípios morais."
+    },
+    {
+        nome: "EA Sports FC 24 (FIFA)",
+        genero: "Esporte / Futebol",
+        sinopse: "O principal simulador de futebol do mundo, trazendo elencos reais atualizados, física realista da bola, partidas competitivas online e a experiência de gerenciar um clube no Modo Carreira."
+    },
+    {
+        nome: "Grand Theft Auto V (GTA V)",
+        genero: "Ação / Mundo Aberto",
+        sinopse: "Três criminosos muito diferentes arriscam tudo em uma série de assaltos ousados na perigosa e ensolarada cidade de Los Santos."
+    },
+    {
+        nome: "God of War Ragnarök",
+        genero: "Ação / Aventura Mitológica",
+        sinopse: "Kratos e seu filho Atreus devem viajar pelos Nove Reinos da mitologia nórdica em busca de respostas enquanto o apocalíptico Ragnarök se aproxima."
+    },
+    {
+        nome: "Forza Horizon 5",
+        genero: "Corrida / Mundo Aberto",
+        sinopse: "Pilote centenas dos melhores carros do mundo em corridas alucinantes através dos cenários vibrantes e em constante mudança das paisagens do México."
+    },
+    {
+        nome: "Stardew Valley",
+        genero: "Simulação / RPG de Fazenda",
+        sinopse: "Você herdou a antiga fazenda do seu avô. Com ferramentas velhas e poucas moedas, você precisa aprender a viver da terra e transformar os campos abandonados em um lar próspero."
+    },
+    {
+        nome: "Resident Evil 4 Remake",
+        genero: "Survival Horror / Ação",
+        sinopse: "O agente especial Leon S. Kennedy é enviado a uma vilarejo isolado na Europa para resgatar a filha do presidente americano, enfrentando hordas de aldeões infectados por um parasita misterioso."
+    },
+    {
+        nome: "Grand Turismo 7",
+        genero: "Simulador de Corrida",
+        sinopse: "Celebrando a cultura automotiva, o jogo oferece centenas de veículos detalhados, pistas históricas e simulação precisa de física e desgaste de pneus."
+    },
+    {
+        nome: "NBA 2K24",
+        genero: "Esporte / Basquete",
+        sinopse: "A experiência definitiva de basquete que permite comandar seus times favoritos da NBA, criar seu próprio atleta e disputar ligas online."
+    },
+    {
+        nome: "Spider-Man 2 (PS5)",
+        genero: "Ação / Super-herói",
+        sinopse: "Peter Parker e Miles Morales enfrentam seu maior desafio quando o simbionte Venom ameaça destruir a cidade de Nova York e suas vidas pessoais."
+    },
+    {
+        nome: "The Legend of Zelda: Tears of the Kingdom",
+        genero: "Aventura / Mundo Aberto",
+        sinopse: "Link explora os céus e as profundezas de Hyrule usando novas habilidades de construção para deter uma força ancestral que ameaça o reino."
+    },
+    {
+        nome: "Terraria",
+        genero: "Sandbox / Aventura 2D",
+        sinopse: "Cave, lute, explore e construa! Nesse jogo de sobrevivência 2D, o mundo é seu tela enquanto você enfrenta dezenas de chefes monstruosos."
+    },
+    {
+        nome: "Rocket League",
+        genero: "Esporte / Ação com Carros",
+        sinopse: "Futebol encontra carros movidos a foguete! Partidas aceleradas onde o objetivo é usar impulsos e manobras aéreas para colocar a bola gigante no gol adversário."
+    },
+    {
+        nome: "Overwatch 2",
+        genero: "Tiro Tático / Hero Shooter",
+        sinopse: "Um jogo de tiro em equipe onde heróis futuristas com habilidades únicas batalham ao redor do mundo por objetivos táticos."
+    },
+    {
+        nome: "Valorant",
+        genero: "Tiro Tático / FPS",
+        sinopse: "Um FPS competitivo de 5 contra 5 baseado em rodadas, onde o uso preciso de armas de fogo se junta a habilidades mágicas e tecnológicas dos agentes."
+    },
+    {
+        nome: "Counter-Strike 2 (CS2)",
+        genero: "Tiro Tático / FPS",
+        sinopse: "O clássico jogo de confronto entre Contra-Terroristas e Terroristas em sua versão modernizada com nova engine gráfica e física de fumaça interativa."
+    },
+    {
+        nome: "League of Legends",
+        genero: "MOBA / Estratégia",
+        sinopse: "Duas equipes de 5 campeões se enfrentam em uma arena para destruir a estrutura principal (Nexus) da base inimiga utilizando estratégia e trabalho em equipe."
+    },
+    {
+        nome: "Dark Souls III",
+        genero: "Soulslike / RPG de Ação",
+        sinopse: "Viaje por Lothric em um mundo à beira do apocalipse, derrotando os Lordes das Cinzas para decidir o destino da Primeira Chama."
+    },
+    {
+        nome: "Sekiro: Shadows Die Twice",
+        genero: "Ação / Aventura Ninja",
+        sinopse: "No Japão do período Sengoku, um shinobi de um braço só busca resgatar seu jovem mestre e se vingar de seus inimigos usando aparas de espada perfeitas."
+    },
+    {
+        nome: "Bloodborne",
+        genero: "Soulslike / Terror Gótico",
+        sinopse: "Um caçador chega à cidade amaldiçoada de Yharnam em busca de uma cura, mas descobre que as ruas foram tomadas por feras bestiais e segredos cósmicos."
+    },
+    {
+        nome: "Monster Hunter: World",
+        genero: "RPG de Ação / Caça",
+        sinopse: "Assuma o papel de um caçador explorando um ecossistema vivo para rastrear e batalhar contra monstros colossais, usando seus materiais para forjar armas melhores."
+    },
+    {
+        nome: "Fall Guys",
+        genero: "Party Game / Battle Royale",
+        sinopse: "Dezenas de competidores em forma de jujuba enfrentam percursos de obstáculos caóticos até restar apenas um vencedor com a coroa."
+    },
+    {
+        nome: "Dead by Daylight",
+        genero: "Terror Assimétrico",
+        sinopse: "Um jogo de horror 4vs1 onde um jogador assume o papel de um Assassino brutal e os outros quatro tentam escapar sem serem capturados."
+    },
+    {
+        nome: "Genshin Impact",
+        genero: "RPG / Mundo Aberto Fantasia",
+        sinopse: "O Viajante chega ao mundo mágico de Teyvat para procurar seu irmão perdido, dominando poderes elementais e conhecendo aliados com histórias únicas."
+    },
+    {
+        nome: "Sea of Thieves",
+        genero: "Aventura Pirata / Mundo Aberto",
+        sinopse: "Viva a vida pirata definitiva navegando com seus amigos, buscando tesouros perdidos, enfrentando esqueletos e batalhando contra navios rivais."
+    },
+    {
+        nome: "Cuphead",
+        genero: "Plataforma / Boss Rush",
+        sinopse: "Inspirado nos desenhos animados dos anos 1930, Cuphead e Mugman precisam derrotar chefes insanos para pagar uma dívida que fizeram com o Diabo."
+    },
+    {
+        nome: "Hadès",
+        genero: "Rogue-like / Ação Mitológica",
+        sinopse: "Zagreus, o príncipe do Submundo, luta para fugir do reino de seu pai Hades através de dungeons geradas aleatoriamente e bênçãos dos deuses do Olimpo."
+    },
+    {
+        nome: "Dead Cells",
+        genero: "Rogue-lite / Metroidvania",
+        sinopse: "Explore um castelo em constante mudança em um combate dinâmico em 2D. Se você morrer, volta ao início, mas guarda melhorias permanentes."
+    },
+    {
+        nome: "Subnautica",
+        genero: "Sobrevivência / Exploração Aquática",
+        sinopse: "Após a nave espacial cair em um planeta alienígena coberto por água, você deve construir bases subterrâneas e explorar as profundezas do oceano para sobreviver."
+    },
+    {
+        nome: "Need for Speed Unbound",
+        genero: "Corrida Arcada / Estilo Urbano",
+        sinopse: "Corra contra o tempo, despiste a polícia e participe de qualificatórias semanais de rali urbano com carros tunados e estilo visual em cel-shading."
+    },
+    {
+        nome: "Tony Hawk's Pro Skater 1 + 2",
+        genero: "Esporte / Skate Arcada",
+        sinopse: "A coleção definitiva com os jogos originais de skate refeitos do zero em HD, incluindo manobras insanas, combos gigantes e a trilha sonora marcante."
+    },
+    {
+        nome: "Doom Eternal",
+        genero: "FPS / Ação Frenética",
+        sinopse: "Como o Doom Slayer, você retorna à Terra para impedir uma invasão demoníaca usando um arsenal pesado e combate acelerado ao som de heavy metal."
+    },
+    {
+        nome: "Ghost of Tsushima",
+        genero: "Ação / Mundo Aberto Samurai",
+        sinopse: "O samurai Jin Sakai precisa abandonar o código de honra tradicional para se tornar o 'Fantasma' e proteger a ilha de Tsushima durante a invasão mongol."
+    },
+    {
+        nome: "Horizon Zero Dawn",
+        genero: "RPG de Ação / Pós-Apocalíptico",
+        sinopse: "Em um futuro onde máquinas em forma de dinossauros dominam a Terra, a caçadora Aloy busca descobrir a verdade sobre suas origens e a ruína da civilização antiga."
+    },
+    {
+        nome: "Assassins Creed Valhalla",
+        genero: "RPG / Mundo Aberto Viking",
+        sinopse: "Lidere invasões vikings na Inglaterra do século IX como Eivor, construindo seu assentamento e conquistando reinos rivais."
+    },
+    {
+        nome: "F1 23",
+        genero: "Simulador de Corrida",
+        sinopse: "O jogo oficial do Campeonato Mundial de Fórmula 1, trazendo todos os pilotos, equipes, circuitos oficiais e um modo história dramático."
+    },
+    {
+        nome: "Uncharted 4: A Thief's End",
+        genero: "Ação / Aventura Cinco Estrelas",
+        sinopse: "O caçador de tesouros aposentado Nathan Drake é forçado a voltar ao mundo dos ladrões para salvar seu irmão e encontrar o tesouro pirata de Henry Avery."
+    },
+    {
+        nome: "The Last of Us Part I",
+        genero: "Ação / Sobrevivência Pós-Apocalíptica",
+        sinopse: "Em um mundo devastado por um fungo mortal, o sobrevivente amargurado Joel é contratado para contrabandear a garota Ellie de 14 anos para fora de uma zona militar."
+    },
+    {
+        nome: "Starfield",
+        genero: "RPG / Exploração Espacial",
+        sinopse: "Explore mais de mil planetas no espaço sideral como membro da Constelação, um grupo de exploradores em busca de artefatos misteriosos pela galáxia."
+    },
+    {
+        nome: "Baldur's Gate 3",
+        genero: "RPG de Turnos / D&D",
+        sinopse: "Uma aventura profunda no universo de Dungeons & Dragons onde suas escolhas moldam o destino dos Reinos Esquecidos enquanto tenta se livrar de um parasita mental."
+    },
+    {
+        nome: "Among Us",
+        genero: "Party Game / Dedução Social",
+        sinopse: "Prepare sua nave espacial para a decolagem, mas cuidado: um ou mais jogadores são Impostores focados em eliminar a tripulação em segredo."
+    },
+    {
+        nome: "Phasmophobia",
+        genero: "Terror Co-op / Investigação",
+        sinopse: "Uma equipe de 4 investigadores paranormais entra em locais amaldiçoados usando equipamentos reais de caça-fantasmas para identificar o tipo de entidade presente."
+    },
+    {
+        nome: "Cities: Skylines",
+        genero: "Simulação / Construção de Cidade",
+        sinopse: "Projete, construa e gerencie sua própria metrópole moderna, cuidando do trânsito, economia, impostos e serviços públicos dos cidadãos."
+    },
+    {
+        nome: "Palworld",
+        genero: "Sobrevivência / Coleção de Criaturas",
+        sinopse: "Crie, lute e trabalhe ao lado de criaturas misteriosas chamadas 'Pals' em um vasto mundo aberto com armas de fogo e automação de bases."
+    },
+    {
+        nome: "Persona 5 Royal",
+        genero: "JRPG / Vida Escolar",
+        sinopse: "Estudantes colegiais em Tóquio vivem vidas duplas como os 'Phantom Thieves of Hearts', invadindo os palácios mentais de adultos corruptos para mudar a sociedade."
     }
 ];
+
+// Variável para guardar o último jogo sorteado e evitar repetição seguida
+let ultimoIndiceSorteado = -1;
 
 function indicarJogo() {
     const resultadoDiv = document.getElementById("resultado-indicacao");
     if (!resultadoDiv) return;
 
-    const jogoSorteado = jogosParaIndicar[Math.floor(Math.random() * jogosParaIndicar.length)];
+    let novoIndice;
+    // Garante que não repete o mesmo jogo imediatamente
+    do {
+        novoIndice = Math.floor(Math.random() * jogosParaIndicar.length);
+    } while (novoIndice === ultimoIndiceSorteado && jogosParaIndicar.length > 1);
+
+    ultimoIndiceSorteado = novoIndice;
+    const jogoSorteado = jogosParaIndicar[novoIndice];
 
     resultadoDiv.style.display = "block";
     resultadoDiv.innerHTML = `
