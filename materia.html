@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GustaTech - Matéria Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎮 GustaTech</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Início</a></li>
+                <li><a href="novidades.html">🔥 Novidades</a></li>
+                <li><a href="teorias.html">🧠 Teorias</a></li>
+                <li><a href="updates.html">🛠️ Updates</a></li>
+                <li><a href="java.html">☕ Mundo Java</a></li>
+                <li><a href="indicacoes.html">🎲 Indicações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container materia-completa">
+        <h1 id="materia-titulo">Carregando...</h1>
+        <p class="meta-info">Publicado por <strong>Gusta</strong> • GustaTech</p>
+
+        <div class="conteudo-texto" id="materia-conteudo">
+            <p>Carregando conteúdo...</p>
+        </div>
+
+        <a href="javascript:history.back()" class="btn-link">← Voltar Página</a>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+            <p class="direitos-autorais">Desenvolvido por <strong>Gusta (Gustavo)</strong> - Direitos Autorais Reservados &copy;</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Carrega automaticamente a matéria selecionada
+        document.addEventListener("DOMContentLoaded", function () {
+            carregarMateriaCompleta();
+        });
+    </script>
+</body>
+</html>
