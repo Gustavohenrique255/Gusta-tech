@@ -1,3 +1,6 @@
+/* ================================================
+   GUSTATECH - ESTILOS GERAIS
+   ================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +14,9 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho e Menu */
+/* ================================================
+   CABEÇALHO & MENU DE NAVEGAÇÃO
+   ================================================ */
 header {
     background-color: #1a1a1e;
     display: flex;
@@ -44,7 +49,7 @@ nav a {
     color: #e1e1e6;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s;
+    transition: color 0.2s, border-bottom 0.2s;
     font-size: 0.95rem;
     padding-bottom: 4px;
 }
@@ -54,7 +59,9 @@ nav a:hover, nav a.ativo {
     border-bottom: 2px solid #04d361;
 }
 
-/* Hero Banner */
+/* ================================================
+   HERO BANNER (TOPO DAS PÁGINAS)
+   ================================================ */
 .hero {
     text-align: center;
     padding: 3.5rem 1rem;
@@ -70,9 +77,12 @@ nav a:hover, nav a.ativo {
 
 .hero p {
     color: #a8a8b3;
+    font-size: 1.05rem;
 }
 
-/* Container Principal */
+/* ================================================
+   CONTAINER PRINCIPAL E SEÇÕES
+   ================================================ */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -86,7 +96,9 @@ nav a:hover, nav a.ativo {
     padding-left: 0.8rem;
 }
 
-/* Grid de Cards */
+/* ================================================
+   GRID DE CARDS (NOTÍCIAS, TEORIAS, UPDATES)
+   ================================================ */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,7 +133,9 @@ nav a:hover, nav a.ativo {
     font-size: 0.9rem;
 }
 
-/* Botões */
+/* ================================================
+   BOTÕES (LINKS, CURTIR E RELER)
+   ================================================ */
 .btn-link {
     display: inline-block;
     background-color: #8257e5;
@@ -147,7 +161,7 @@ nav a:hover, nav a.ativo {
     cursor: pointer;
     font-weight: bold;
     font-size: 0.9rem;
-    transition: background-color 0.2s, transform 0.1s;
+    transition: background-color 0.2s, opacity 0.2s;
     width: 100%;
 }
 
@@ -155,13 +169,37 @@ nav a:hover, nav a.ativo {
     background-color: #996dff;
 }
 
+/* Estilo do Botão quando já está Curtido */
 .btn-curtir.curtido {
     background-color: #04d361 !important;
     color: #121214 !important;
     opacity: 0.9;
 }
 
-/* Área de Indicação com Sinopse */
+/* Botão de Reler Matéria (Aparece automaticamente após curtir) */
+.btn-reler {
+    display: block;
+    background-color: #29292e;
+    color: #04d361;
+    border: 1px solid #04d361;
+    text-decoration: none;
+    padding: 0.6rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-reler:hover {
+    background-color: #04d361;
+    color: #121214;
+}
+
+/* ================================================
+   ÁREA DE INDICAÇÕES (SORTEADOR DE JOGOS)
+   ================================================ */
 .card-indicacao {
     background-color: #202024;
     padding: 2.5rem;
@@ -197,7 +235,9 @@ nav a:hover, nav a.ativo {
     text-align: left;
 }
 
-/* Página de Leitura de Matéria Completa */
+/* ================================================
+   PÁGINAS DE LEITURA COMPLETA DA MATÉRIA
+   ================================================ */
 .materia-completa {
     background-color: #202024;
     padding: 2.5rem;
@@ -235,7 +275,9 @@ nav a:hover, nav a.ativo {
     padding: 0;
 }
 
-/* Rodapé */
+/* ================================================
+   RODAPÉ
+   ================================================ */
 footer {
     background-color: #09090a;
     color: #737380;

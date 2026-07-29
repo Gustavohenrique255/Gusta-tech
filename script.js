@@ -1,48 +1,56 @@
-// Função chamada ao carregar a página para recuperar curtidas salvas
+// Atualiza os botões ao carregar a página
 document.addEventListener("DOMContentLoaded", function () {
     atualizarBotoesSalvos();
 });
 
-// Salva e Trava Curtida + Redireciona para a Matéria Completa
+// Ação ao clicar em Curtir
 function curtirELer(idItem, paginaDestino) {
     let curtido = localStorage.getItem("curtido_" + idItem);
 
     if (!curtido) {
-        // Registra a curtida no navegador
         localStorage.setItem("curtido_" + idItem, "true");
     }
 
-    // Redireciona na própria guia para a página da matéria
+    // Redireciona para a página da matéria
     window.location.href = paginaDestino;
 }
 
-// Verifica e aplica o estado de "Curtido" nos botões
+// Verifica se já foi curtido e adiciona o botão de reler
 function atualizarBotoesSalvos() {
     const botoes = document.querySelectorAll(".btn-curtir");
-    
+
     botoes.forEach(botao => {
-        // Extrai o ID do item a partir do onclick ou atributo
         const onclickAttr = botao.getAttribute("onclick");
         if (onclickAttr) {
-            const match = onclickAttr.match(/'([^']+)'/);
+            const match = onclickAttr.match(/'([^']+)',\s*'([^']+)'/);
             if (match) {
                 const idItem = match[1];
+                const paginaDestino = match[2];
                 const estaCurtido = localStorage.getItem("curtido_" + idItem);
-                
+
                 if (estaCurtido) {
-                    const contadorSpan = botao.querySelector(".contador");
-                    if (contadorSpan) contadorSpan.textContent = "1";
+                    // Modifica o botão de curtir para Curtido
                     botao.classList.add("curtido");
                     botao.innerHTML = "✅ Curtido! (1)";
-                    botao.disabled = true; // Impede curtidas infinitas
-                    botao.style.cursor = "not-allowed";
+                    botao.disabled = true;
+                    botao.style.cursor = "default";
+
+                    // Cria o botão de Reler Matéria logo abaixo, se ainda não existir
+                    const card = botao.parentElement;
+                    if (!card.querySelector(".btn-reler")) {
+                        const btnReler = document.createElement("a");
+                        btnReler.href = paginaDestino;
+                        btnReler.className = "btn-reler";
+                        btnReler.innerHTML = "📖 Reler Matéria Completa";
+                        card.appendChild(btnReler);
+                    }
                 }
             }
         }
     });
 }
 
-// Banco de Dados com Sinopses Detalhadas
+// Banco de Dados das Indicações com Sinopse
 const jogosParaIndicar = [
     {
         nome: "Minecraft (Java Edition)",
@@ -52,7 +60,7 @@ const jogosParaIndicar = [
     {
         nome: "The Witcher 3: Wild Hunt",
         genero: "RPG / Mundo Aberto",
-        historia: "Geralt de Rívia é um caçador de monstros mutante em um mundo devastado pela guerra. Ele precisa encontrar Ciri, sua filha adotiva que possui um poder antigo capaz de manipular o espaço e o tempo. Contudo, ela está sendo perseguida pela Caçada Selvagem, uma horda de cavaleiros espectrais."
+        sinopse: "Geralt de Rívia é um caçador de monstros mutante em um mundo devastado pela guerra. Ele precisa encontrar Ciri, sua filha adotiva que possui um poder antigo capaz de manipular o espaço e o tempo. Contudo, ela está sendo perseguida pela Caçada Selvagem, uma horda de cavaleiros espectrais."
     },
     {
         nome: "Hollow Knight",
@@ -71,17 +79,16 @@ const jogosParaIndicar = [
     }
 ];
 
-// Gerador com exibição da Sinopse Completa
 function indicarJogo() {
     const resultadoDiv = document.getElementById("resultado-indicacao");
     if (!resultadoDiv) return;
 
     const jogoSorteado = jogosParaIndicar[Math.floor(Math.random() * jogosParaIndicar.length)];
-    
+
     resultadoDiv.style.display = "block";
     resultadoDiv.innerHTML = `
         <h4 style="color: #04d361; font-size: 1.3rem; margin-bottom: 0.5rem;">🎮 ${jogoSorteado.nome}</h4>
         <p style="margin-bottom: 0.8rem;"><strong>📌 Gênero:</strong> ${jogoSorteado.genero}</p>
-        <p style="color: #a8a8b3; text-align: justify; line-height: 1.6;"><strong>📖 Sinopse Completa:</strong> ${jogoSorteado.sinopse || jogoSorteado.historia}</p>
+        <p style="color: #a8a8b3; text-align: justify; line-height: 1.6;"><strong>📖 Sinopse Completa:</strong> ${jogoSorteado.sinopse}</p>
     `;
 }
