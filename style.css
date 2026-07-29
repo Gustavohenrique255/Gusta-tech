@@ -16,16 +16,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 2rem;
     border-bottom: 2px solid #8257e5;
     flex-wrap: wrap;
     gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #996dff;
+    text-shadow: 0 0 10px rgba(153, 109, 255, 0.4);
 }
 
 nav ul {
@@ -38,28 +42,30 @@ nav ul {
 nav a {
     color: #e1e1e6;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.2s;
+    font-size: 0.95rem;
 }
 
 nav a:hover {
-    color: #996dff;
+    color: #04d361;
 }
 
 .hero {
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 3.5rem 1rem;
     background: linear-gradient(180deg, #1a1a1e 0%, #121214 100%);
+    border-bottom: 1px solid #29292e;
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     margin-bottom: 0.5rem;
     color: #04d361;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
@@ -67,20 +73,28 @@ nav a:hover {
 .container h2 {
     margin-bottom: 1.5rem;
     color: #996dff;
+    border-left: 4px solid #8257e5;
+    padding-left: 0.8rem;
 }
 
-/* Controle das Páginas/Abas */
+/* Controle de Exibição das Abas/Páginas */
 .aba-conteudo {
     display: none;
 }
 
 .aba-conteudo.ativa {
     display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
 
@@ -92,16 +106,24 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #8257e5;
 }
 
 .card h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     color: #ffffff;
+    font-size: 1.1rem;
 }
 
 .card p {
     color: #a8a8b3;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .btn-curtir {
@@ -121,6 +143,7 @@ nav a:hover {
 
 .btn-curtir.curtido {
     background-color: #04d361;
+    color: #121214;
 }
 
 .btn-curtir:active {
@@ -137,7 +160,7 @@ nav a:hover {
 /* Área de Indicação */
 .card-indicacao {
     background-color: #202024;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 8px;
     border: 1px solid #29292e;
     text-align: center;
@@ -147,12 +170,13 @@ nav a:hover {
     background-color: #04d361;
     color: #121214;
     border: none;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
     margin-top: 1rem;
+    transition: background-color 0.2s;
 }
 
 #btn-indicar:hover {
@@ -162,33 +186,35 @@ nav a:hover {
 .resultado-box {
     display: none;
     margin-top: 1.5rem;
-    padding: 1rem;
+    padding: 1.2rem;
     background-color: #1a1a1e;
     border: 1px solid #8257e5;
     border-radius: 6px;
     color: #04d361;
+    font-size: 1.1rem;
 }
 
 /* Rodapé com Direitos Autorais do Gusta */
 footer {
     background-color: #09090a;
     color: #737380;
-    margin-top: 3rem;
+    margin-top: 4rem;
     padding: 2rem 1.5rem;
+    border-top: 1px solid #29292e;
 }
 
 .footer-content {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .direitos-autorais {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #996dff;
 }
 
