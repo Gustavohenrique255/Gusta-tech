@@ -12,251 +12,39 @@
         <div class="logo">🎮 Central Gamer</div>
         <nav>
             <ul>
-                <li><a href="javascript:void(0)" onclick="mudarPagina('novidades')">🔥 Novidades</a></li>
-                <li><a href="javascript:void(0)" onclick="mudarPagina('teorias')">🧠 Teorias & Lore</a></li>
-                <li><a href="javascript:void(0)" onclick="mudarPagina('updates')">🛠️ Updates</a></li>
-                <li><a href="javascript:void(0)" onclick="mudarPagina('java-corner')">☕ Mundo Java</a></li>
-                <li><a href="javascript:void(0)" onclick="mudarPagina('indicacoes')">🎲 Indicações</a></li>
+                <li><a href="index.html" class="ativo">🏠 Início</a></li>
+                <li><a href="novidades.html">🔥 Novidades</a></li>
+                <li><a href="teorias.html">🧠 Teorias</a></li>
+                <li><a href="updates.html">🛠️ Updates</a></li>
+                <li><a href="java.html">☕ Mundo Java</a></li>
+                <li><a href="indicacoes.html">🎲 Indicações</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <h1>O Universo dos Games em Um Só Lugar</h1>
-        <p>As últimas notícias, teorias profundas e análises completas preparadas pelo Gusta.</p>
+        <p>Seja bem-vindo ao portal oficial criado pelo Gusta. Escolha uma das categorias no menu acima para explorar!</p>
     </section>
 
-    <main id="pagina-novidades" class="container aba-conteudo ativa">
-        <h2>🔥 Últimas Novidades da Indústria</h2>
+    <main class="container">
+        <h2>📌 Destaques Principais</h2>
         <div class="grid">
             <article class="card">
-                <h3>1. Anúncio do Novo Console</h3>
-                <p>Rumores e patentes confirmam a próxima geração com foco em resolução 8K e Ray Tracing nativo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
+                <h3>🔥 Últimas Novidades</h3>
+                <p>Fique por dentro das notícias mais recentes, lançamentos e feiras de e-sports.</p>
+                <a href="novidades.html" class="btn-link">Acessar Novidades</a>
             </article>
             <article class="card">
-                <h3>2. Lançamentos do Mês</h3>
-                <p>Confira a lista completa de jogos AAA e indies que chegam às lojas nesta semana.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
+                <h3>🧠 Teorias & Lore</h3>
+                <p>Análises profundas e mistérios escondidos nos seus jogos favoritos.</p>
+                <a href="teorias.html" class="btn-link">Ver Teorias</a>
             </article>
             <article class="card">
-                <h3>3. Catálogo Game Pass & PS Plus</h3>
-                <p>Mais de 15 novos jogos adicionados aos serviços de assinatura neste mês.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
+                <h3>☕ Cantinho Java</h3>
+                <p>Tudo sobre Minecraft Java Edition, mods e a história dos jogos clássicos em Java.</p>
+                <a href="java.html" class="btn-link">Explorar Java</a>
             </article>
-            <article class="card">
-                <h3>4. Feira Mundial de Games</h3>
-                <p>Os maiores estúdios confirmam presença com trailers inéditos e gameplays ao vivo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>5. Novo Motor Gráfico Unreal 5.5</h3>
-                <p>Desenvolvedores mostram físicas de iluminação e vegetação ultra-realistas em tempo real.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>6. Remakes em Produção</h3>
-                <p>Clássicos dos anos 2000 estão sendo refeitos do zero para as plataformas modernas.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>7. Campeonato Mundial de E-sports</h3>
-                <p>Times brasileiros avançam para as finais internacionais com partidas eletrizantes.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>8. Realidade Virtual de Nova Geração</h3>
-                <p>Novos óculos VR prometem eliminar os enjoos com taxa de atualização de 144Hz.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>9. Jogos Gratuitos da Semana</h3>
-                <p>Resgate títulos pagos gratuitamente nas principais lojas de PC antes que acabe a promoção.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>10. Evento Especial no Servidor</h3>
-                <p>Comunidade se reúne no final de semana para torneio comunitário com prêmios.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-        </div>
-    </main>
-
-    <main id="pagina-teorias" class="container aba-conteudo">
-        <h2>🧠 Teorias & Histórias de Jogos</h2>
-        <div class="grid">
-            <article class="card">
-                <h3>1. O Segredo do Protagonista</h3>
-                <p>E se o personagem principal esteve em coma durante toda a jornada? Analisamos os detalhes.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>2. Linhas do Tempo Alternativas</h3>
-                <p>Entenda como as escolhas do primeiro jogo alteraram completamente o universo da sequência.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>3. O Verdadeiro Vilão Escondido</h3>
-                <p>Diálogos ocultos revelam que o mentor do herói é quem manipulava tudo pelas sombras.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>4. Mensagens Subliminares no Mapa</h3>
-                <p>Símbolos nas paredes dos mapas contam a história de uma civilização antiga esquecida.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>5. O Significado dos Easter Eggs</h3>
-                <p>Como referências a outros jogos constroem um universo compartilhado gigante.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>6. Teorias de Elden Ring & Souls</h3>
-                <p>Decifrando a história dos chefes principais através das descrições dos itens do jogo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>7. O Mistério do Final Secreto</h3>
-                <p>Passo a passo das ações necessárias para desbloquear o final verdadeiro mantido em segredo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>8. Viagem no Tempo e Paradoxos</h3>
-                <p>Explicamos como o enredo lida com voltas ao passado sem criar furos na narrativa.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>9. Mitologia por Trás do Lore</h3>
-                <p>A inspiração em lendas nórdicas e gregas para criar a mitologia dos monstros do jogo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>10. O Futuro da Franquia</h3>
-                <p>O que a cena pós-créditos revela sobre os personagens da continuação.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-        </div>
-    </main>
-
-    <main id="pagina-updates" class="container aba-conteudo">
-        <h2>🛠️ Atualizações & Notas de Patch</h2>
-        <div class="grid">
-            <article class="card">
-                <h3>1. GTA VI - Vazamentos de Física</h3>
-                <p>Novos detalhes de colisão de veículos e inteligência artificial da polícia revelados.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>2. Fortnite - Patch da Temporada</h3>
-                <p>Ajustes de dano das armas, novos consumíveis e modificações radicais no mapa.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>3. Valorant & CS2 Balanceamento</h3>
-                <p>Nerfs nas habilidades dos agentes mais fortes e reformulação das armas snipers.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>4. Minecraft Bedrock & Java Patch</h3>
-                <p>Correções de bugs de renderização, sincronização de chunks e otimização de FPS.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>5. League of Legends - Novo Campeão</h3>
-                <p>Análise detalhada das habilidades do novo atirador e mudanças nos itens de selva.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>6. Cyberpunk 2077 - Update de Desempenho</h3>
-                <p>Suporte a novas tecnologias de upscaling e correções de bugs nas missões secundárias.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>7. EA Sports FC - Atualização de Elencos</h3>
-                <p>Transferências atualizadas, novas faces escaneadas e ajustes no modo carreira.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>8. Rocket League - Nova Season</h3>
-                <p>Novos carros na garagem, arenas temáticas e recompensas de ranqueadas.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>9. Apex Legends - Reformulação de Lendas</h3>
-                <p>Passivas reformuladas para incentivar a rotação de personagens no modo competitivo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>10. Genshin Impact & Honkai Update</h3>
-                <p>Nova região explorável, banners de personagens e eventos com gemas grátis.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-        </div>
-    </main>
-
-    <main id="pagina-java-corner" class="container aba-conteudo">
-        <h2>☕ Mundo Java & Games Clássicos</h2>
-        <div class="grid">
-            <article class="card">
-                <h3>1. Minecraft Java Snapshots</h3>
-                <p>Testamos as últimas novidades experimentais diretamente nos servidores de desenvolvimento.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>2. Melhores Mods em Java</h3>
-                <p>Seleção com os mods de otimização e pacotes de expansão mais populares para PC.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>3. História dos Celulares J2ME</h3>
-                <p>Como o Java permitiu a criação dos primeiros jogos complexos para telefones antigos.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>4. O Mítico "Diamond Rush"</h3>
-                <p>Análise de um dos jogos Java mais marcantes da era dos celulares pré-smartphone.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>5. Bounce Tales & Nostalgia</h3>
-                <p>A física do famoso jogo da bolinha vermelha e por que ele marcou época.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>6. Programação de Jogos em Java</h3>
-                <p>Como funcionam os loops principais e a renderização 2D no desenvolvimento Java.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>7. Servidores Customizados</h3>
-                <p>Como criar seu próprio servidor de Minecraft utilizando Java e plugins dedicados.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>8. Runescape Clássico</h3>
-                <p>A trajetória do MMORPG em Java que rodava direto no navegador de milhares de jogadores.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>9. Emuladores de Java</h3>
-                <p>Como jogar os títulos originais do seu antigo celular diretamente no seu PC ou Android.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>10. O Futuro do Java nos Games</h3>
-                <p>Por que a linguagem continuará sendo fundamental para projetos indie e modding.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-        </div>
-    </main>
-
-    <main id="pagina-indicacoes" class="container aba-conteudo">
-        <h2>🎲 Recomendador de Jogos do Gusta</h2>
-        <div class="card-indicacao">
-            <h3>Quer uma dica do que jogar hoje?</h3>
-            <p>Clique no botão para o sistema escolher um super game no nosso banco de dados!</p>
-            <button id="btn-indicar" onclick="indicarJogo()">🎲 Sortear um Jogo</button>
-            <div id="resultado-indicacao" class="resultado-box"></div>
         </div>
     </main>
 

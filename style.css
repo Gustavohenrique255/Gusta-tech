@@ -47,8 +47,9 @@ nav a {
     font-size: 0.95rem;
 }
 
-nav a:hover {
+nav a:hover, nav a.ativo {
     color: #04d361;
+    border-bottom: 2px solid #04d361;
 }
 
 .hero {
@@ -75,21 +76,6 @@ nav a:hover {
     color: #996dff;
     border-left: 4px solid #8257e5;
     padding-left: 0.8rem;
-}
-
-/* Controle de Exibição das Abas/Páginas */
-.aba-conteudo {
-    display: none;
-}
-
-.aba-conteudo.ativa {
-    display: block;
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .grid {
@@ -126,6 +112,22 @@ nav a:hover {
     font-size: 0.9rem;
 }
 
+.btn-link {
+    display: inline-block;
+    background-color: #8257e5;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-link:hover {
+    background-color: #996dff;
+}
+
 .btn-curtir {
     background-color: #8257e5;
     color: #ffffff;
@@ -146,10 +148,6 @@ nav a:hover {
     color: #121214;
 }
 
-.btn-curtir:active {
-    transform: scale(0.95);
-}
-
 .contador {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 2px 8px;
@@ -157,7 +155,6 @@ nav a:hover {
     margin-left: 5px;
 }
 
-/* Área de Indicação */
 .card-indicacao {
     background-color: #202024;
     padding: 2.5rem;
@@ -176,7 +173,6 @@ nav a:hover {
     font-weight: bold;
     font-size: 1rem;
     margin-top: 1rem;
-    transition: background-color 0.2s;
 }
 
 #btn-indicar:hover {
@@ -194,7 +190,6 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
-/* Rodapé com Direitos Autorais do Gusta */
 footer {
     background-color: #09090a;
     color: #737380;
