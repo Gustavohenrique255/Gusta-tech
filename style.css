@@ -18,6 +18,8 @@ header {
     align-items: center;
     padding: 1.5rem 2rem;
     border-bottom: 2px solid #8257e5;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .logo {
@@ -29,13 +31,15 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: #e1e1e6;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.2s;
 }
 
 nav a:hover {
@@ -44,13 +48,13 @@ nav a:hover {
 
 .hero {
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
     background: linear-gradient(180deg, #1a1a1e 0%, #121214 100%);
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
     color: #04d361;
 }
 
@@ -63,6 +67,15 @@ nav a:hover {
 .container h2 {
     margin-bottom: 1.5rem;
     color: #996dff;
+}
+
+/* Controle das Páginas/Abas */
+.aba-conteudo {
+    display: none;
+}
+
+.aba-conteudo.ativa {
+    display: block;
 }
 
 .grid {
@@ -91,7 +104,7 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-.card button {
+.btn-curtir {
     background-color: #8257e5;
     color: #ffffff;
     border: none;
@@ -99,16 +112,86 @@ nav a:hover {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-.card button:hover {
+.btn-curtir:hover {
     background-color: #996dff;
 }
 
-footer {
-    text-align: center;
+.btn-curtir.curtido {
+    background-color: #04d361;
+}
+
+.btn-curtir:active {
+    transform: scale(0.95);
+}
+
+.contador {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+/* Área de Indicação */
+.card-indicacao {
+    background-color: #202024;
     padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #29292e;
+    text-align: center;
+}
+
+#btn-indicar {
+    background-color: #04d361;
+    color: #121214;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+#btn-indicar:hover {
+    background-color: #03b853;
+}
+
+.resultado-box {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #1a1a1e;
+    border: 1px solid #8257e5;
+    border-radius: 6px;
+    color: #04d361;
+}
+
+/* Rodapé com Direitos Autorais do Gusta */
+footer {
     background-color: #09090a;
     color: #737380;
     margin-top: 3rem;
+    padding: 2rem 1.5rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.direitos-autorais {
+    font-size: 0.85rem;
+    color: #996dff;
+}
+
+.direitos-autorais strong {
+    color: #04d361;
 }

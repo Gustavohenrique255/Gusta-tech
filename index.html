@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Gamer - Jogos, Teorias e Novidades</title>
+    <title>Portal Gamer - Gusta</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,53 +12,48 @@
         <div class="logo">🎮 Central Gamer</div>
         <nav>
             <ul>
-                <li><a href="#novidades">Novidades</a></li>
-                <li><a href="#teorias">Teorias</a></li>
+                <li><a href="#" onclick="mudarPagina('novidades')">Novidades</a></li>
+                <li><a href="#" onclick="mudarPagina('updates')">Updates</a></li>
+                <li><a href="#" onclick="mudarPagina('teorias')">Teorias</a></li>
+                <li><a href="#" onclick="mudarPagina('java-corner')">Mundo Java</a></li>
+                <li><a href="#" onclick="mudarPagina('indicacoes')">Indicações</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <h1>O Universo dos Games em Um Só Lugar</h1>
-        <p>As últimas notícias, as teorias mais malucas e os melhores jogos da atualidade.</p>
+        <p>As últimas notícias, teorias e os melhores jogos selecionados pelo Gusta.</p>
     </section>
 
-    <section id="novidades" class="container">
+    <main id="pagina-novidades" class="container aba-conteudo ativa">
         <h2>🔥 Últimas Novidades</h2>
         <div class="grid">
             <article class="card">
                 <h3>Lançamentos da Semana</h3>
                 <p>Confira os principais títulos que estão chegando aos consoles e PC este mês.</p>
-                <button onclick="curtir('Novidades')">❤️ Curtir</button>
+                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
             </article>
             <article class="card">
                 <h3>Novo Game Pass / PS Plus</h3>
                 <p>Veja a lista completa dos jogos adicionados aos serviços de assinatura.</p>
-                <button onclick="curtir('Assinaturas')">❤️ Curtir</button>
+                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
+            </article>
+            <article class="card">
+                <h3>Anúncios do Game Awards</h3>
+                <p>Todos os trailers e revelações dos próximos grandes lançamentos da indústria.</p>
+                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
             </article>
         </div>
-    </section>
+    </main>
 
-    <section id="teorias" class="container">
-        <h2>🧠 Teorias de Jogos</h2>
+    <main id="pagina-updates" class="container aba-conteudo">
+        <h2>🛠️ Atualizações & Patches</h2>
         <div class="grid">
             <article class="card">
-                <h3>O segredo por trás do Lore</h3>
-                <p>Será que o protagonista esteve num sonho o tempo todo? Analisamos as pistas escondidas.</p>
-                <button onclick="curtir('Teoria 1')">❤️ Curtir</button>
+                <h3>GTA VI - Novo Trailer</h3>
+                <p>Análise quadro a quadro das novidades de física, mapa e gráficos vazados.</p>
+                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
             </article>
             <article class="card">
-                <h3>O que esperar da sequência?</h3>
-                <p>Juntamos vazamentos e easter eggs para prever o enredo do próximo lançamento.</p>
-                <button onclick="curtir('Teoria 2')">❤️ Curtir</button>
-            </article>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Portal Gamer - Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <h3>Fortnite - Nova Temporada</h3>
