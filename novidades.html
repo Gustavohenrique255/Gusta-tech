@@ -24,7 +24,7 @@
 
     <section class="hero">
         <h1>🔥 Últimas Novidades da Indústria</h1>
-        <p>Acompanhe aqui todas as notícias fresquinhas selecionadas pelo Gusta.</p>
+        <p>Clique em "Curtir & Ler Matéria" para registrar seu voto e abrir a história completa!</p>
     </section>
 
     <main class="container">
@@ -32,54 +32,19 @@
             <article class="card">
                 <h3>1. Anúncio do Novo Console</h3>
                 <p>Rumores e patentes confirmam a próxima geração com foco em resolução 8K e Ray Tracing nativo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
+                <button id="btn-novidade-1" class="btn-curtir" onclick="curtirELer('novidade-1', 'materia-1.html')">
+                    ❤️ Curtir & Ler Matéria (<span class="contador">0</span>)
+                </button>
             </article>
+
             <article class="card">
                 <h3>2. Lançamentos do Mês</h3>
                 <p>Confira a lista completa de jogos AAA e indies que chegam às lojas nesta semana.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
+                <button id="btn-novidade-2" class="btn-curtir" onclick="curtirELer('novidade-2', 'materia-2.html')">
+                    ❤️ Curtir & Ler Matéria (<span class="contador">0</span>)
+                </button>
             </article>
-            <article class="card">
-                <h3>3. Catálogo Game Pass & PS Plus</h3>
-                <p>Mais de 15 novos jogos adicionados aos serviços de assinatura neste mês.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>4. Feira Mundial de Games</h3>
-                <p>Os maiores estúdios confirmam presença com trailers inéditos e gameplays ao vivo.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>5. Novo Motor Gráfico Unreal 5.5</h3>
-                <p>Desenvolvedores mostram físicas de iluminação e vegetação ultra-realistas em tempo real.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>6. Remakes em Produção</h3>
-                <p>Clássicos dos anos 2000 estão sendo refeitos do zero para as plataformas modernas.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>7. Campeonato Mundial de E-sports</h3>
-                <p>Times brasileiros avançam para as finais internacionais com partidas eletrizantes.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>8. Realidade Virtual de Nova Geração</h3>
-                <p>Novos óculos VR prometem eliminar os enjoos com taxa de atualização de 144Hz.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>9. Jogos Gratuitos da Semana</h3>
-                <p>Resgate títulos pagos gratuitamente nas principais lojas de PC antes que acabe a promoção.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-            <article class="card">
-                <h3>10. Evento Especial no Servidor</h3>
-                <p>Comunidade se reúne no final de semana para torneio comunitário com prêmios.</p>
-                <button class="btn-curtir" onclick="curtir(this)">❤️ Curtir <span class="contador">0</span></button>
-            </article>
-        </div>
+            </div>
     </main>
 
     <footer>
