@@ -1,11 +1,203 @@
-/* Botão quando já está curtido */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    line-height: 1.6;
+}
+
+/* Cabeçalho e Menu */
+header {
+    background-color: #1a1a1e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    border-bottom: 2px solid #8257e5;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #996dff;
+    text-shadow: 0 0 10px rgba(153, 109, 255, 0.4);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #e1e1e6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+    padding-bottom: 4px;
+}
+
+nav a:hover, nav a.ativo {
+    color: #04d361;
+    border-bottom: 2px solid #04d361;
+}
+
+/* Hero Banner */
+.hero {
+    text-align: center;
+    padding: 3.5rem 1rem;
+    background: linear-gradient(180deg, #1a1a1e 0%, #121214 100%);
+    border-bottom: 1px solid #29292e;
+}
+
+.hero h1 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+    color: #04d361;
+}
+
+.hero p {
+    color: #a8a8b3;
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.container h2 {
+    margin-bottom: 1.5rem;
+    color: #996dff;
+    border-left: 4px solid #8257e5;
+    padding-left: 0.8rem;
+}
+
+/* Grid de Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #202024;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #29292e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #8257e5;
+}
+
+.card h3 {
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.card p {
+    color: #a8a8b3;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+}
+
+/* Botões */
+.btn-link {
+    display: inline-block;
+    background-color: #8257e5;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-link:hover {
+    background-color: #996dff;
+}
+
+.btn-curtir {
+    background-color: #8257e5;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+}
+
+.btn-curtir:hover {
+    background-color: #996dff;
+}
+
 .btn-curtir.curtido {
     background-color: #04d361 !important;
     color: #121214 !important;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
-/* Estilo para Leitura da Matéria Completa */
+/* Área de Indicação com Sinopse */
+.card-indicacao {
+    background-color: #202024;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #29292e;
+    text-align: center;
+}
+
+#btn-indicar {
+    background-color: #04d361;
+    color: #121214;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+#btn-indicar:hover {
+    background-color: #03b853;
+}
+
+.resultado-box {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: #1a1a1e;
+    border: 1px solid #8257e5;
+    border-radius: 6px;
+    text-align: left;
+}
+
+/* Página de Leitura de Matéria Completa */
 .materia-completa {
     background-color: #202024;
     padding: 2.5rem;
@@ -39,4 +231,34 @@
     color: #996dff;
     font-size: 1.4rem;
     margin: 2rem 0 1rem 0;
+    border: none;
+    padding: 0;
+}
+
+/* Rodapé */
+footer {
+    background-color: #09090a;
+    color: #737380;
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid #29292e;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.direitos-autorais {
+    font-size: 0.9rem;
+    color: #996dff;
+}
+
+.direitos-autorais strong {
+    color: #04d361;
 }
