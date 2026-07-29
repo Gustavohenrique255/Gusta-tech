@@ -3,80 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gusta Tech - Portal de Notícias</title>
+    <title>Portal Gamer - Jogos, Teorias e Novidades</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Gusta Tech News</h1>
-        <p>Compartilhando conhecimentos e novidades do mundo Tech.</p>
-        
+        <div class="logo">🎮 Central Gamer</div>
         <nav>
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
-                <li><a href="#inovacao">Inovação</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#novidades">Novidades</a></li>
+                <li><a href="#teorias">Teorias</a></li>
+                <li><a href="#jogos">Jogos Indique</a></li>
             </ul>
         </nav>
     </header>
 
-    <hr>
+    <section class="hero">
+        <h1>O Universo dos Games em Um Só Lugar</h1>
+        <p>As últimas notícias, as teorias mais malucas e os melhores jogos da atualidade.</p>
+    </section>
 
-    <main>
-        
-        <section id="destaque">
-            <h2>Destaque do Dia</h2>
-            <article>
-                <h3>O Futuro da Inteligência Artificial na Programação</h3>
-                <p><em>Publicado por Gusta em 28 de Julho de 2026</em></p>
-                <img src="https://via.placeholder.com/600x300" alt="Imagem sobre Inteligência Artificial">
-                <p>Descubra como novas ferramentas de IA estão transformando o fluxo de trabalho de desenvolvedores ao redor do mundo e o que esperar para o futuro.</p>
-                <a href="#">Leia mais...</a>
+    <section id="novidades" class="container">
+        <h2>🔥 Últimas Novidades</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Lançamentos da Semana</h3>
+                <p>Confira os principais títulos que estão chegando aos consoles e PC este mês.</p>
+                <button onclick="curtir('Novidades')">❤️ Curtir</button>
             </article>
-        </section>
-
-        <hr>
-
-        <section id="ultimas-noticias">
-            <h2>Últimas Notícias</h2>
-
-            <article>
-                <h3>Lançamento do HTML6? Entenda os Rumores</h3>
-                <p><em>Categoria: Web Design</em></p>
-                <p>Especialistas debatem quais serão as novas tags e recursos semânticos para a próxima evolução da web.</p>
-                <a href="#">Ler artigo completo</a>
+            <article class="card">
+                <h3>Novo Game Pass / PS Plus</h3>
+                <p>Veja a lista completa dos jogos adicionados aos serviços de assinatura.</p>
+                <button onclick="curtir('Assinaturas')">❤️ Curtir</button>
             </article>
+        </div>
+    </section>
 
-            <br>
-
-            <article>
-                <h3>VS Code Web: Programando de Qualquer Lugar</h3>
-                <p><em>Categoria: Ferramentas</em></p>
-                <p>Aprenda a utilizar o navegador como seu ambiente de desenvolvimento principal sem instalar nada localmente.</p>
-                <a href="#">Ler artigo completo</a>
+    <section id="teorias" class="container">
+        <h2>🧠 Teorias de Jogos</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>O segredo por trás do Lore</h3>
+                <p>Será que o protagonista esteve num sonho o tempo todo? Analisamos as pistas escondidas no mapa.</p>
+                <button onclick="curtir('Teoria 1')">❤️ Curtir</button>
             </article>
-        </section>
-
-        <hr>
-
-        <section id="newsletter">
-            <h3>Receba as notícias no seu e-mail</h3>
-            <form action="#" method="POST">
-                <label for="email">Seu e-mail:</label>
-                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-                <button type="submit">Inscrever-se</button>
-            </form>
-        </section>
-
-    </main>
-
-    <hr>
-
-    <footer>
-        <p>&copy; 2026 Gusta Tech. Todos os direitos reservados.</p>
-        <p>Desenvolvido com HTML5 puro.</p>
-    </footer>
-
-</body>
-</html>
+            <article class="card">
+                <h3>O que esperar da sequência?</h3>
+                <p>Juntamos vazamentos e easter eggs para prever o enredo do próximo grande lançamento.</p>
