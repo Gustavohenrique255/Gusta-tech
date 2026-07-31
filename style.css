@@ -1,3 +1,6 @@
+/* =========================================================
+   ESTILOS GERAIS E RESET
+   ========================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +16,9 @@ body {
     min-height: 100vh;
 }
 
-/* CABEÇALHO E NAVEGAÇÃO */
+/* =========================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================================= */
 header {
     background-color: #202024;
     padding: 1rem 2rem;
@@ -42,11 +47,34 @@ nav a {
     transition: color 0.2s;
 }
 
-nav a:hover {
+nav a:hover, nav a.ativo {
     color: #04d361;
 }
 
-/* CONTAINER PRINCIPAL */
+/* =========================================================
+   SEÇÃO HERO (DESTAQUE DA PÁGINA INICIAL)
+   ========================================================= */
+.hero {
+    background-color: #1a1a1e;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-bottom: 1px solid #29292e;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    color: #a8a8b3;
+    font-size: 1.1rem;
+}
+
+/* =========================================================
+   CONTAINER E CARDS / GRID
+   ========================================================= */
 .container {
     max-width: 1100px;
     margin: 2rem auto;
@@ -54,12 +82,15 @@ nav a:hover {
     flex: 1;
 }
 
-/* CARDS E CONTEÚDO */
-.cards-grid {
+.container h2 {
+    color: #04d361;
+    margin-bottom: 1.5rem;
+}
+
+.grid, .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin-top: 1.5rem;
 }
 
 .card {
@@ -90,7 +121,22 @@ nav a:hover {
     margin-bottom: 1.2rem;
 }
 
-/* BOTÕES DE CURTIR E RELER */
+/* =========================================================
+   BOTÕES GERAIS E LINKS
+   ========================================================= */
+.btn-link {
+    display: inline-block;
+    color: #996dff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.btn-link:hover {
+    color: #04d361;
+    text-decoration: underline;
+}
+
 .btn-curtir {
     background-color: #04d361;
     color: #000;
@@ -124,25 +170,47 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* SORTEADOR DE JOGOS (INDICAÇÕES) */
-.box-sorteio {
+/* =========================================================
+   RODAPÉ (FOOTER)
+   ========================================================= */
+footer {
     background-color: #202024;
-    border-radius: 8px;
-    padding: 2rem;
     text-align: center;
-    border: 1px solid #29292e;
-    max-width: 650px;
-    margin: 2rem auto;
+    padding: 1.5rem;
+    border-top: 1px solid #29292e;
+    margin-top: auto;
+    color: #737380;
+    font-size: 0.9rem;
 }
 
-.btn-sortear {
+.direitos-autorais {
+    margin-top: 0.4rem;
+    color: #a8a8b3;
+}
+
+/* =========================================================
+   BOTÃO FIXO DO PIX (FLUTUANTE NO CANTO INFERIOR ESQUERDO)
+   ========================================================= */
+.btn-doacao-fixo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
     background-color: #04d361;
-    color: #000;
+    color: #000000;
     font-weight: bold;
-    font-size: 1.1rem;
-    border: none;
-    padding: 0.8rem 1.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: transform 0.2s
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-doacao-fixo:hover {
+    background-color: #03b050;
+    transform: scale(1.08);
+}
