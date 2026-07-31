@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GustaTech - Doações Solidárias</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pix-card {
+            background-color: #202024;
+            border: 2px solid #04d361;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(4, 211, 97, 0.2);
+        }
+        .pix-key {
+            background-color: #121214;
+            color: #04d361;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: 1px dashed #04d361;
+            margin: 1rem 0;
+            word-break: break-all;
+        }
+        .btn-copiar {
+            background-color: #04d361;
+            color: #000;
+            font-weight: bold;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .btn-copiar:hover {
+            background-color: #03b050;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎮 GustaTech</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Início</a></li>
+                <li><a href="novidades.html">🔥 Novidades</a></li>
+                <li><a href="teorias.html">🧠 Teorias</a></li>
+                <li><a href="updates.html">🛠️ Updates</a></li>
+                <li><a href="java.html">☕ Mundo Java</a></li>
+                <li><a href="indicacoes.html">🎲 Indicações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 style="text-align: center; margin-top: 1rem;">❤️ Doações Solidárias</h1>
+        <p style="text-align: center; color: #a8a8b3; margin-top: 0.5rem;">Sua contribuição ajuda a manter o projeto GustaTech online e com novos conteúdos diários!</p>
+
+        <div class="pix-card">
+            <h3>🤝 Apoie o GustaTech via PIX</h3>
+            <p style="margin-top: 0.8rem; color: #04d361; font-weight: bold;">Você pode enviar qualquer valor que desejar!</p>
+            <p style="margin-top: 0.3rem; color: #c4c4cc; font-size: 0.9rem;">Toda ajuda é muito bem-vinda.</p>
+
+            <div class="pix-key" id="chave-pix">gustavopix2555@gmail.com</div>
+
+            <button class="btn-copiar" onclick="copiarPix()">📋 Copiar Chave PIX</button>
+            <p id="mensagem-copiado" style="color: #04d361; margin-top: 0.8rem; display: none; font-weight: bold;">✅ Chave PIX copiada com sucesso!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+            <p class="direitos-autorais">Desenvolvido por <strong>Gusta (Gustavo)</strong> - Direitos Autorais Reservados &copy;</p>
+        </div>
+    </footer>
+
+    <a href="doacoes.html" class="btn-doacao-fixo">
+        ❤️ Doações Pix
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        function copiarPix() {
+            const chave = document.getElementById("chave-pix").innerText;
+            navigator.clipboard.writeText(chave).then(() => {
+                const msg = document.getElementById("mensagem-copiado");
+                msg.style.display = "block";
+                setTimeout(() => { msg.style.display = "none"; }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>

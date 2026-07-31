@@ -53,7 +53,7 @@ const bancoDeMaterias = {
     },
     'update-3': {
         titulo: "Valorant & CS2 - Reformulação de Agentes e Recuo",
-        texto: "Os novos patches competitivos focaram no equilíbrio tático. As habilidades de contenção de mapa de vários agentes sofreram aumentos no tempo de recarga, enquanto o padrão de recuo (recoil) das snipers foi ajustado para evitar tiros perfeitos em movimento."
+        texto: "Os novos patches competitivos focaram no equilíbrio tático. As habilidades de contenção de mapa de vários agentes sofreram aumentos no tempo de recarga, enquanto o padrão de recuo (recoil) das snipers foi adjusted para evitar tiros perfeitos em movimento."
     },
     'update-4': {
         titulo: "Minecraft - Otimização de FPS e Correção de Renderização",
@@ -115,7 +115,7 @@ const bancoDeMaterias = {
     },
     'teoria-8': {
         titulo: "Qual é o Final Realmente Canônico?",
-        texto: "Apesar de haver três finais possíveis no jogo, falas de desenvolvedores em entrevistas recentes e referências em quadrinhos derivados apontam que o final 'Ruim' é o que officially conecta a história com a sequência já anunciada."
+        texto: "Apesar de haver três finais possíveis no jogo, falas de desenvolvedores em entrevistas recentes e referências em quadrinhos derivados apontam que o final 'Ruim' é o que oficialmente conecta a história com a sequência já anunciada."
     },
     'teoria-9': {
         titulo: "Inteligência Artificial Ganhou Consciência Própria?",
@@ -133,7 +133,7 @@ const bancoDeMaterias = {
     },
     'java-2': {
         titulo: "Os Melhores Mods em Java para Otimização de FPS",
-        texto: "A comunidade de Java desenvolveu modificações incríveis que reescrevem o motor de renderização do Minecraft. Mods como Sodium e Lithium conseguem triplicar o número de quadros por segundo em computadores fracos."
+        texto: "A comunidade de Java developed modificações incríveis que reescrevem o motor de renderização do Minecraft. Mods como Sodium e Lithium conseguem triplicar o número de quadros por segundo em computadores fracos."
     },
     'java-3': {
         titulo: "A Era dos Celulares J2ME nos Anos 2000",

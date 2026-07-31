@@ -1,6 +1,3 @@
-/* ================================================
-   GUSTATECH - ESTILOS GERAIS
-   ================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -11,104 +8,64 @@
 body {
     background-color: #121214;
     color: #e1e1e6;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* ================================================
-   CABEÇALHO & MENU DE NAVEGAÇÃO
-   ================================================ */
+/* CABEÇALHO E NAVEGAÇÃO */
 header {
-    background-color: #1a1a1e;
+    background-color: #202024;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 2rem;
-    border-bottom: 2px solid #8257e5;
-    flex-wrap: wrap;
-    gap: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    border-bottom: 2px solid #04d361;
 }
 
 .logo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #996dff;
-    text-shadow: 0 0 10px rgba(153, 109, 255, 0.4);
+    color: #04d361;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1.2rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 nav a {
-    color: #e1e1e6;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s, border-bottom 0.2s;
-    font-size: 0.95rem;
-    padding-bottom: 4px;
-}
-
-nav a:hover, nav a.ativo {
-    color: #04d361;
-    border-bottom: 2px solid #04d361;
-}
-
-/* ================================================
-   HERO BANNER (TOPO DAS PÁGINAS)
-   ================================================ */
-.hero {
-    text-align: center;
-    padding: 3.5rem 1rem;
-    background: linear-gradient(180deg, #1a1a1e 0%, #121214 100%);
-    border-bottom: 1px solid #29292e;
-}
-
-.hero h1 {
-    font-size: 2.3rem;
-    margin-bottom: 0.5rem;
-    color: #04d361;
-}
-
-.hero p {
     color: #a8a8b3;
-    font-size: 1.05rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
-/* ================================================
-   CONTAINER PRINCIPAL E SEÇÕES
-   ================================================ */
+nav a:hover {
+    color: #04d361;
+}
+
+/* CONTAINER PRINCIPAL */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 2rem auto;
     padding: 0 1rem;
+    flex: 1;
 }
 
-.container h2 {
-    margin-bottom: 1.5rem;
-    color: #996dff;
-    border-left: 4px solid #8257e5;
-    padding-left: 0.8rem;
-}
-
-/* ================================================
-   GRID DE CARDS (NOTÍCIAS, TEORIAS, UPDATES)
-   ================================================ */
-.grid {
+/* CARDS E CONTEÚDO */
+.cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .card {
     background-color: #202024;
-    padding: 1.5rem;
     border-radius: 8px;
+    padding: 1.5rem;
     border: 1px solid #29292e;
     display: flex;
     flex-direction: column;
@@ -118,189 +75,129 @@ nav a:hover, nav a.ativo {
 
 .card:hover {
     transform: translateY(-4px);
-    border-color: #8257e5;
+    border-color: #04d361;
 }
 
 .card h3 {
+    color: #04d361;
     margin-bottom: 0.8rem;
-    color: #ffffff;
-    font-size: 1.1rem;
 }
 
 .card p {
     color: #a8a8b3;
+    font-size: 0.95rem;
+    line-height: 1.5;
     margin-bottom: 1.2rem;
-    font-size: 0.9rem;
 }
 
-/* ================================================
-   BOTÕES (LINKS, CURTIR E RELER)
-   ================================================ */
-.btn-link {
-    display: inline-block;
-    background-color: #8257e5;
-    color: #fff;
-    text-decoration: none;
+/* BOTÕES DE CURTIR E RELER */
+.btn-curtir {
+    background-color: #04d361;
+    color: #000;
+    font-weight: bold;
+    border: none;
     padding: 0.6rem 1rem;
     border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
+    cursor: pointer;
     transition: background-color 0.2s;
 }
 
-.btn-link:hover {
-    background-color: #996dff;
-}
-
-.btn-curtir {
-    background-color: #8257e5;
-    color: #ffffff;
-    border: none;
-    padding: 0.7rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: background-color 0.2s, opacity 0.2s;
-    width: 100%;
-}
-
 .btn-curtir:hover {
-    background-color: #996dff;
+    background-color: #03b050;
 }
 
-/* Estilo do Botão quando já está Curtido */
 .btn-curtir.curtido {
-    background-color: #04d361 !important;
-    color: #121214 !important;
-    opacity: 0.9;
+    background-color: #29292e !important;
+    color: #04d361 !important;
 }
 
-/* Botão de Reler Matéria (Aparece automaticamente após curtir) */
 .btn-reler {
-    display: block;
-    background-color: #29292e;
-    color: #04d361;
-    border: 1px solid #04d361;
-    text-decoration: none;
-    padding: 0.6rem;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.85rem;
+    display: inline-block;
     margin-top: 0.8rem;
-    transition: background-color 0.2s, color 0.2s;
+    color: #996dff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .btn-reler:hover {
-    background-color: #04d361;
-    color: #121214;
+    text-decoration: underline;
 }
 
-/* ================================================
-   ÁREA DE INDICAÇÕES (SORTEADOR DE JOGOS)
-   ================================================ */
-.card-indicacao {
+/* SORTEADOR DE JOGOS (INDICAÇÕES) */
+.box-sorteio {
     background-color: #202024;
-    padding: 2.5rem;
     border-radius: 8px;
-    border: 1px solid #29292e;
+    padding: 2rem;
     text-align: center;
+    border: 1px solid #29292e;
+    max-width: 650px;
+    margin: 2rem auto;
 }
 
-#btn-indicar {
+.btn-sortear {
     background-color: #04d361;
-    color: #121214;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
     border: none;
     padding: 0.8rem 1.8rem;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 1rem;
     margin-top: 1rem;
-    transition: background-color 0.2s;
+    transition: transform 0.2s;
 }
 
-#btn-indicar:hover {
-    background-color: #03b853;
+.btn-sortear:hover {
+    transform: scale(1.05);
 }
 
-.resultado-box {
-    display: none;
+.resultado-jogo {
     margin-top: 1.5rem;
-    padding: 1.5rem;
-    background-color: #1a1a1e;
-    border: 1px solid #8257e5;
+    background-color: #121214;
+    padding: 1.2rem;
     border-radius: 6px;
+    border-left: 4px solid #04d361;
     text-align: left;
+    display: none;
 }
 
-/* ================================================
-   PÁGINAS DE LEITURA COMPLETA DA MATÉRIA
-   ================================================ */
-.materia-completa {
-    background-color: #202024;
-    padding: 2.5rem;
-    border-radius: 8px;
-    border: 1px solid #29292e;
-    margin-top: 2rem;
-}
-
-.materia-completa h1 {
-    color: #04d361;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.meta-info {
-    color: #737380;
-    font-size: 0.85rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #29292e;
-    padding-bottom: 1rem;
-}
-
-.conteudo-texto p {
-    color: #e1e1e6;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-}
-
-.conteudo-texto h2 {
-    color: #996dff;
-    font-size: 1.4rem;
-    margin: 2rem 0 1rem 0;
-    border: none;
-    padding: 0;
-}
-
-/* ================================================
-   RODAPÉ
-   ================================================ */
+/* RODAPÉ */
 footer {
-    background-color: #09090a;
-    color: #737380;
-    margin-top: 4rem;
-    padding: 2rem 1.5rem;
+    background-color: #202024;
+    text-align: center;
+    padding: 1.5rem;
     border-top: 1px solid #29292e;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    margin-top: auto;
+    color: #737380;
+    font-size: 0.9rem;
 }
 
 .direitos-autorais {
-    font-size: 0.9rem;
-    color: #996dff;
+    margin-top: 0.4rem;
+    color: #a8a8b3;
 }
 
-.direitos-autorais strong {
-    color: #04d361;
+/* BOTÃO FIXO NO CANTO INFERIOR ESQUERDO */
+.btn-doacao-fixo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #04d361;
+    color: #000;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-doacao-fixo:hover {
+    background-color: #03b050;
+    transform: scale(1.08);
 }
