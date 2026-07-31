@@ -91,12 +91,3 @@
     <script>
         function copiarPix() {
             const chave = document.getElementById("chave-pix").innerText;
-            navigator.clipboard.writeText(chave).then(() => {
-                const msg = document.getElementById("mensagem-copiado");
-                msg.style.display = "block";
-                setTimeout(() => { msg.style.display = "none"; }, 3000);
-            });
-        }
-    </script>
-</body>
-</html>
