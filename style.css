@@ -47,7 +47,7 @@ nav a:hover, nav a.ativo {
     color: #04d361;
 }
 
-/* HERO E CABEÇALHO DE SEÇÕES */
+/* HERO E TÍTULOS */
 .hero, .secao-titulo {
     background-color: #1a1a1e;
     text-align: center;
@@ -301,7 +301,7 @@ footer {
     color: #a8a8b3;
 }
 
-/* BOTÃO FIXO DE DOAÇÃO */
+/* BOTÃO FIXO DE DOAÇÕES (CORRIGIDO PARA CLIQUE GARANTIDO) */
 .btn-doacao-fixo {
     position: fixed;
     bottom: 20px;
@@ -317,6 +317,9 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
     transition: transform 0.2s, background-color 0.2s;
 }
 
