@@ -47,26 +47,25 @@ nav a:hover, nav a.ativo {
     color: #04d361;
 }
 
-/* HERO E TÍTULOS */
-.hero, .secao-titulo {
+/* TÍTULOS E CONTAINER */
+.secao-titulo {
     background-color: #1a1a1e;
     text-align: center;
     padding: 2.5rem 1rem;
     border-bottom: 1px solid #29292e;
 }
 
-.hero h1, .secao-titulo h1 {
+.secao-titulo h1 {
     font-size: 2rem;
     color: #ffffff;
     margin-bottom: 0.5rem;
 }
 
-.hero p, .secao-titulo p {
+.secao-titulo p {
     color: #a8a8b3;
     font-size: 1.1rem;
 }
 
-/* CONTAINER E GRID DE CARDS */
 .container {
     max-width: 1100px;
     margin: 2rem auto;
@@ -74,12 +73,7 @@ nav a:hover, nav a.ativo {
     flex: 1;
 }
 
-.container h2 {
-    color: #04d361;
-    margin-bottom: 1.5rem;
-}
-
-.grid, .cards-grid {
+.cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
@@ -104,7 +98,6 @@ nav a:hover, nav a.ativo {
 .card h3 {
     color: #04d361;
     margin-bottom: 0.8rem;
-    font-size: 1.2rem;
 }
 
 .card p {
@@ -112,20 +105,6 @@ nav a:hover, nav a.ativo {
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1.2rem;
-}
-
-/* BOTÕES E LINKS */
-.btn-link {
-    display: inline-block;
-    color: #996dff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s;
-}
-
-.btn-link:hover {
-    color: #04d361;
-    text-decoration: underline;
 }
 
 .btn-curtir {
@@ -136,62 +115,16 @@ nav a:hover, nav a.ativo {
     padding: 0.7rem 1rem;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.95rem;
-    transition: background-color 0.2s;
     width: 100%;
 }
 
-.btn-curtir:hover {
-    background-color: #03b050;
-}
-
-/* SORTEADOR DE JOGOS */
-.box-sorteio {
-    background-color: #202024;
-    border-radius: 12px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    border: 1px solid #29292e;
-    max-width: 700px;
-    margin: 1rem auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-.btn-sortear {
-    background-color: #04d361;
-    color: #000;
-    font-weight: bold;
-    font-size: 1.1rem;
-    border: none;
-    padding: 0.9rem 2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1.5rem;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.btn-sortear:hover {
-    background-color: #03b050;
-    transform: scale(1.04);
-}
-
-.resultado-jogo {
-    margin-top: 1.8rem;
-    background-color: #121214;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #04d361;
-    text-align: left;
-    display: none;
-}
-
-/* PÁGINA DE DOAÇÕES E PIX */
+/* ESTILOS DA PÁGINA DE DOAÇÃO E PIX */
 .container-doacao {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .card-pix-destaque {
@@ -202,7 +135,7 @@ nav a:hover, nav a.ativo {
     max-width: 520px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(4, 211, 97, 0.15);
+    box-shadow: 0 8px 30px rgba(4, 211, 97, 0.2);
 }
 
 .icone-coracao {
@@ -227,23 +160,23 @@ nav a:hover, nav a.ativo {
     background-color: #121214;
     border: 2px dashed #04d361;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.2rem;
     margin-bottom: 1.2rem;
 }
 
 .label-pix {
     color: #04d361;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .valor-chave-pix {
     color: #ffffff;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: bold;
     word-break: break-all;
 }
@@ -254,7 +187,7 @@ nav a:hover, nav a.ativo {
     font-weight: bold;
     font-size: 1rem;
     border: none;
-    padding: 0.85rem;
+    padding: 0.9rem;
     border-radius: 6px;
     cursor: pointer;
     width: 100%;
@@ -274,7 +207,7 @@ nav a:hover, nav a.ativo {
     display: none;
 }
 
-.legenda-valor {
+.detalhe-info {
     color: #a8a8b3;
     font-size: 0.88rem;
     line-height: 1.5;
@@ -283,6 +216,32 @@ nav a:hover, nav a.ativo {
     padding: 1rem;
     border-radius: 8px;
     border: 1px solid #29292e;
+    text-align: left;
+}
+
+/* BOTÃO VERDE FIXO FLUTUANTE */
+.btn-doacao-fixo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #04d361;
+    color: #000000;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-doacao-fixo:hover {
+    background-color: #03b050;
+    transform: scale(1.08);
 }
 
 /* RODAPÉ */
@@ -294,36 +253,4 @@ footer {
     margin-top: auto;
     color: #737380;
     font-size: 0.9rem;
-}
-
-.direitos-autorais {
-    margin-top: 0.4rem;
-    color: #a8a8b3;
-}
-
-/* BOTÃO FIXO DE DOAÇÕES (CORRIGIDO PARA CLIQUE GARANTIDO) */
-.btn-doacao-fixo {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #04d361;
-    color: #000;
-    font-weight: bold;
-    padding: 12px 18px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.btn-doacao-fixo:hover {
-    background-color: #03b050;
-    transform: scale(1.08);
 }
