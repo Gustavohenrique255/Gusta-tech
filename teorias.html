@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <div class="logo">🎮 GustaTech</div>
+        <a href="index.html" class="logo">🎮 GustaTech</a>
         <nav>
             <ul>
                 <li><a href="index.html">🏠 Início</a></li>
@@ -19,88 +19,129 @@
                 <li><a href="java.html">☕ Mundo Java</a></li>
                 <li><a href="indicacoes.html">🎲 Indicações</a></li>
             </ul>
+            <button id="btn-tema" class="btn-tema" onclick="alternarTema()">🌙 Escuro</button>
         </nav>
     </header>
 
     <section class="secao-titulo">
         <h1>🧠 Teorias & Lore</h1>
         <p>Análises profundas e mistérios escondidos nos seus jogos favoritos.</p>
+        
+        <div class="caixa-busca">
+            <input type="text" id="campo-busca" onkeyup="filtrarMaterias()" placeholder="🔍 Pesquise nas teorias...">
+        </div>
     </section>
 
     <main class="container">
         <div class="cards-grid">
             <article class="card">
+                <div class="meta-card"><span class="tag">#Minecraft</span><span class="tempo-leitura">⏱️ 5 min</span></div>
                 <h3>1. O Segredo dos Portais do End no Minecraft</h3>
                 <p>Quem construiu as antigas fortalezas subterrâneas e qual era a intenção da antiga civilização?</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-1', 'materia-teoria-1.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-1.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-1" onclick="curtirMateria('teoria-1')">❤️ <span id="like-count-teoria-1">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Zelda</span><span class="tempo-leitura">⏱️ 6 min</span></div>
                 <h3>2. A Linha do Tempo Oculta em Zelda</h3>
                 <p>Como os eventos da última sequência se conectam com a era dos heróis antigos e a maldição de Ganon?</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-2', 'materia-teoria-2.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-2.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-2" onclick="curtirMateria('teoria-2')">❤️ <span id="like-count-teoria-2">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#EldenRing</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>3. O Mistério do Portal Selado em Elden Ring</h3>
                 <p>Símbolos ocultos no mapa indicam uma área secreta planejada para a próxima grande expansão.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-3', 'materia-teoria-3.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-3.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-3" onclick="curtirMateria('teoria-3')">❤️ <span id="like-count-teoria-3">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#ResidentEvil</span><span class="tempo-leitura">⏱️ 5 min</span></div>
                 <h3>4. A Origem Real dos Zumbis em Resident Evil</h3>
                 <p>Documentos antigos nos arquivos do jogo sugerem uma ligação com um laboratório na Europa nos anos 60.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-4', 'materia-teoria-4.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-4.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-4" onclick="curtirMateria('teoria-4')">❤️ <span id="like-count-teoria-4">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#HollowKnight</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>5. O Significado Oculto de Hollow Knight</h3>
                 <p>Análise da metáfora da Infecção e a trágica história da ruína de Hallownest.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-5', 'materia-teoria-5.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-5.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-5" onclick="curtirMateria('teoria-5')">❤️ <span id="like-count-teoria-5">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#GTA6</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>6. GTA VI: Quem é Realmente o Antagonista?</h3>
                 <p>Teoria baseada nos detalhes do primeiro trailer aponta para uma organização secreta na cidade.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-6', 'materia-teoria-6.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-6.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-6" onclick="curtirMateria('teoria-6')">❤️ <span id="like-count-teoria-6">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Remedy</span><span class="tempo-leitura">⏱️ 5 min</span></div>
                 <h3>7. O Universo Compartilhado dos Jogos da Remedy</h3>
                 <p>Conexões sutis provam que Alan Wake, Control e Quantum Break se passam na mesma dimensão.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-7', 'materia-teoria-7.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-7.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-7" onclick="curtirMateria('teoria-7')">❤️ <span id="like-count-teoria-7">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#RDR2</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>8. O Fantasma da Montanha em Red Dead Redemption 2</h3>
                 <p>Jogadores descobrem diálogos raros que revelam a triste história por trás do mistério de New Austin.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-8', 'materia-teoria-8.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-8.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-8" onclick="curtirMateria('teoria-8')">❤️ <span id="like-count-teoria-8">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Portal</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>9. O Verdadeiro Objetivo da Aperture Science em Portal</h3>
                 <p>GLaDOS não estava apenas testando os portais, mas sim desenvolvendo uma arma secreta contra a Combine.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-9', 'materia-teoria-9.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-9.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-9" onclick="curtirMateria('teoria-9')">❤️ <span id="like-count-teoria-9">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#DarkSouls</span><span class="tempo-leitura">⏱️ 5 min</span></div>
                 <h3>10. Dark Souls: A Era dos Homens Nunca Existiu?</h3>
                 <p>Uma reflexão sobre a Primeira Chama e a farsa criada pelos Deuses de Anor Londo.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('teoria-10', 'materia-teoria-10.html')">❤️ Curtir & Ler Teoria</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-teoria-10.html')">📖 Ler Teoria</button>
+                    <button class="btn-like" id="btn-like-teoria-10" onclick="curtirMateria('teoria-10')">❤️ <span id="like-count-teoria-10">0</span></button>
+                </div>
             </article>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
-            <p style="margin-top: 0.4rem; color: #a8a8b3;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
-        </div>
+        <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+        <p style="margin-top: 0.4rem;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
     </footer>
 
-    <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">
-        ❤️ Doações Pix
-    </a>
+    <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">❤️ Doações Pix</a>
 
     <script src="script.js"></script>
 </body>

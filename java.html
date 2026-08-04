@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <div class="logo">🎮 GustaTech</div>
+        <a href="index.html" class="logo">🎮 GustaTech</a>
         <nav>
             <ul>
                 <li><a href="index.html">🏠 Início</a></li>
@@ -19,88 +19,129 @@
                 <li><a href="java.html" class="ativo">☕ Mundo Java</a></li>
                 <li><a href="indicacoes.html">🎲 Indicações</a></li>
             </ul>
+            <button id="btn-tema" class="btn-tema" onclick="alternarTema()">🌙 Escuro</button>
         </nav>
     </header>
 
     <section class="secao-titulo">
         <h1>☕ Cantinho Java</h1>
         <p>Tudo sobre Minecraft Java Edition, mods e a história dos jogos em Java.</p>
+        
+        <div class="caixa-busca">
+            <input type="text" id="campo-busca" onkeyup="filtrarMaterias()" placeholder="🔍 Pesquise no Mundo Java...">
+        </div>
     </section>
 
     <main class="container">
         <div class="cards-grid">
             <article class="card">
+                <div class="meta-card"><span class="tag">#FPSBoost</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>1. Melhores Mods de Otimização no Minecraft Java</h3>
                 <p>Guia completo utilizando Sodium, Lithium e FerriteCore para triplicar seus quadros por segundo (FPS).</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-1', 'materia-java-1.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-1.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-1" onclick="curtirMateria('java-1')">❤️ <span id="like-count-java-1">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#História</span><span class="tempo-leitura">⏱️ 5 min</span></div>
                 <h3>2. A História da Linguagem Java nos Games</h3>
                 <p>Como a plataforma revolucionou a criação de jogos indie leves na era de ouro da internet.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-2', 'materia-java-2.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-2.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-2" onclick="curtirMateria('java-2')">❤️ <span id="like-count-java-2">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Shaders</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>3. Shaders Mais Leves para PCs Fracos</h3>
                 <p>Transforme o visual do seu Minecraft sem perder o desempenho: conheça os melhores Shaders leves.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-3', 'materia-java-3.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-3.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-3" onclick="curtirMateria('java-3')">❤️ <span id="like-count-java-3">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Servidores</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>4. Como Criar um Servidor Privado de Minecraft Java</h3>
                 <p>Passo a passo simples para rodar um servidor de sobrevivência com seus amigos de graça.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-4', 'materia-java-4.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-4.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-4" onclick="curtirMateria('java-4')">❤️ <span id="like-count-java-4">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Performance</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>5. Java 21 e o Impacto na Performance do Minecraft</h3>
                 <p>Entenda como as novas versões da Máquina Virtual Java (JVM) deixaram o jogo muito mais fluido.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-5', 'materia-java-5.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-5.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-5" onclick="curtirMateria('java-5')">❤️ <span id="like-count-java-5">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Redstone</span><span class="tempo-leitura">⏱️ 5 min</span></div>
                 <h3>6. Guia Prático de Redstone na Java Edition</h3>
                 <p>Diferenças fundamentais entre os circuitos na Java e na Bedrock para criar fazendas automáticas.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-6', 'materia-java-6.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-6.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-6" onclick="curtirMateria('java-6')">❤️ <span id="like-count-java-6">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Nostalgia</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>7. Clássicos Jogos em Java de Celular (J2ME)</h3>
                 <p>Nostalgia pura! Relembre os melhores jogos de celular antigo antes da era dos smartphones.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-7', 'materia-java-7.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-7.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-7" onclick="curtirMateria('java-7')">❤️ <span id="like-count-java-7">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Modpacks</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>8. Modpacks Técnico-Sobrevivência Imperdíveis</h3>
                 <p>Construa fábricas automáticas e explore novas dimensões com os Modpacks mais famosos.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-8', 'materia-java-8.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-8.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-8" onclick="curtirMateria('java-8')">❤️ <span id="like-count-java-8">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Dev</span><span class="tempo-leitura">⏱️ 5 min</span></div>
                 <h3>9. Como Começar a Programar Jogos Simples em Java</h3>
                 <p>Aprenda os primeiros passos para criar seu próprio jogo 2D usando bibliotecas leves do Java.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-9', 'materia-java-9.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-9.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-9" onclick="curtirMateria('java-9')">❤️ <span id="like-count-java-9">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Comunidade</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>10. Por Que a Java Edition Ainda É a Favorita da Comunidade?</h3>
                 <p>Análise da liberdade de modificação, suporte a mods comunitários e servidores abertos.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('java-10', 'materia-java-10.html')">❤️ Curtir & Ler Artigo</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-java-10.html')">📖 Ler Artigo</button>
+                    <button class="btn-like" id="btn-like-java-10" onclick="curtirMateria('java-10')">❤️ <span id="like-count-java-10">0</span></button>
+                </div>
             </article>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
-            <p style="margin-top: 0.4rem; color: #a8a8b3;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
-        </div>
+        <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+        <p style="margin-top: 0.4rem;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
     </footer>
 
-    <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">
-        ❤️ Doações Pix
-    </a>
+    <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">❤️ Doações Pix</a>
 
     <script src="script.js"></script>
 </body>

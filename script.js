@@ -6,7 +6,7 @@ function alternarTema() {
     document.getElementById('btn-tema').innerText = isLight ? '☀️ Claro' : '🌙 Escuro';
 }
 
-// CARREGAR TEMA SALVO E LIKES AO CARREGAR A PÁGINA
+// CARREGAR TEMA SALVO E STATUS DE LIKES
 window.addEventListener('DOMContentLoaded', () => {
     const temaSalvo = localStorage.getItem('gustaTech_tema');
     if (temaSalvo === 'light') {
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     carregarLikes();
 });
 
-// SISTEMA DE PESQUISA EM TEMPO REAL
+// FILTRO DE BUSCA EM TEMPO REAL
 function filtrarMaterias() {
     const termo = document.getElementById('campo-busca').value.toLowerCase();
     const cards = document.querySelectorAll('.card');
@@ -35,25 +35,51 @@ function filtrarMaterias() {
     });
 }
 
-// SISTEMA DE CURTIDAS PERSISTENTE (LOCALSTORAGE)
+// TRAVA DE 1 LIKE POR PESSOA (USANDO LOCALSTORAGE)
 function curtirMateria(id) {
-    let likes = parseInt(localStorage.getItem('like_' + id) || 0);
+    const jaCurtiu = localStorage.getItem('voto_curtiu_' + id);
+    let likes = parseInt(localStorage.getItem('like_count_' + id) || 0);
+
+    if (jaCurtiu) {
+        alert("Você já curtiu esta matéria!");
+        return;
+    }
+
     likes++;
-    localStorage.setItem('like_' + id, likes);
-    const contador = document.getElementById('like-count-' + id);
-    if (contador) contador.innerText = likes;
+    localStorage.setItem('like_count_' + id, likes);
+    localStorage.setItem('voto_curtiu_' + id, 'true');
+
+    atualizarBotaoLike(id, likes, true);
 }
 
 function carregarLikes() {
     const contadores = document.querySelectorAll('[id^="like-count-"]');
     contadores.forEach(el => {
         const id = el.id.replace('like-count-', '');
-        const likes = localStorage.getItem('like_' + id) || 0;
-        el.innerText = likes;
+        const likes = localStorage.getItem('like_count_' + id) || 0;
+        const jaCurtiu = localStorage.getItem('voto_curtiu_' + id) === 'true';
+        atualizarBotaoLike(id, likes, jaCurtiu);
     });
 }
 
-// BANCO DE DADOS COMPLETO COM 50 JOGOS
+function atualizarBotaoLike(id, likes, jaCurtiu) {
+    const contador = document.getElementById('like-count-' + id);
+    if (contador) contador.innerText = likes;
+
+    const btn = document.getElementById('btn-like-' + id);
+    if (btn && jaCurtiu) {
+        btn.style.borderColor = 'var(--cor-destaque)';
+        btn.style.color = 'var(--cor-destaque)';
+        btn.title = "Você já curtiu esta matéria";
+    }
+}
+
+// REDIRECIONAR / LER MATÉRIA
+function lerMateria(url) {
+    window.open(url, '_blank');
+}
+
+// BANCO DE DADOS DE 50 JOGOS
 const bancoJogos = [
     { nome: "The Witcher 3: Wild Hunt", genero: "RPG de Ação", desc: "Explore um mundo aberto rico em história na pele de Geralt de Rivia." },
     { nome: "Hollow Knight", genero: "Metroidvania", desc: "Desça pelas profundezas de Hallownest num universo sombrio e desafiador." },
@@ -74,7 +100,7 @@ const bancoJogos = [
     { nome: "Dark Souls III", genero: "Souls-like", desc: "Enfrente batalhas impiedosas em um mundo em ruínas." },
     { nome: "Sekiro: Shadows Die Twice", genero: "Ação / Furtividade", desc: "Domine a arte da katana no Japão feudal enfrentando inimigos mortais." },
     { nome: "Bloodborne", genero: "Souls-like / Terror", desc: "Cace pesadelos na macabra e gótica cidade de Yharnam." },
-    { nome: "Hadès", genero: "Rogue-like", desc: "Lute para escapar do Submundo grego dominando poderes olímpicos." },
+    { nome: "Hades", genero: "Rogue-like", desc: "Lute para escapar do Submundo grego dominando poderes olímpicos." },
     { nome: "Celeste", genero: "Plataforma", desc: "Ajude Madeline a superar seus dilemas enquanto escala a Montanha Celeste." },
     { nome: "Dead Cells", genero: "Rogue-lite / Metroidvania", desc: "Explore um castelo em constante mudança em combates frenéticos." },
     { nome: "Portal 2", genero: "Puzzle / Ficção Científica", desc: "Resolva desafios com portais numa instalação científica abandonada." },
@@ -107,7 +133,6 @@ const bancoJogos = [
     { nome: "Hollow Knight: Silksong", genero: "Metroidvania", desc: "A aguardada jornada de Hornet por um reino dominado por seda e música." }
 ];
 
-// FUNÇÃO DO SORTEADOR
 function indicarJogo() {
     const sorteado = bancoJogos[Math.floor(Math.random() * bancoJogos.length)];
     const res = document.getElementById('resultado-indicacao');
@@ -117,7 +142,6 @@ function indicarJogo() {
                      <strong>📝 Resumo:</strong> ${sorteado.desc}`;
 }
 
-// FUNÇÃO DE VOTAÇÃO DA ENQUETE
 function votarEnquete(opcao) {
     alert(`Obrigado pelo voto na opção: ${opcao}!`);
 }

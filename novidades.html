@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <div class="logo">🎮 GustaTech</div>
+        <a href="index.html" class="logo">🎮 GustaTech</a>
         <nav>
             <ul>
                 <li><a href="index.html">🏠 Início</a></li>
@@ -19,88 +19,129 @@
                 <li><a href="java.html">☕ Mundo Java</a></li>
                 <li><a href="indicacoes.html">🎲 Indicações</a></li>
             </ul>
+            <button id="btn-tema" class="btn-tema" onclick="alternarTema()">🌙 Escuro</button>
         </nav>
     </header>
 
     <section class="secao-titulo">
         <h1>🔥 Últimas Novidades</h1>
-        <p>Fique por dentro das notícias mais recentes, lançamentos e feiras de e-sports.</p>
+        <p>Acompanhe os anúncios e lançamentos mais recentes do mundo gamer.</p>
+        
+        <div class="caixa-busca">
+            <input type="text" id="campo-busca" onkeyup="filtrarMaterias()" placeholder="🔍 Pesquise nas novidades...">
+        </div>
     </section>
 
     <main class="container">
         <div class="cards-grid">
             <article class="card">
+                <div class="meta-card"><span class="tag">#Hardware</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>1. Anúncio do Novo Console de Última Geração</h3>
                 <p>Patentes vazadas confirmam IA dedicada para Ray Tracing e suporte a 4K 120FPS na próxima geração.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-1', 'materia-1.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-1.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-1" onclick="curtirMateria('novidade-1')">❤️ <span id="like-count-novidade-1">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Lançamentos</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>2. Lançamentos AAA do Mês</h3>
-                <p>Confira a lista completa dos principais títulos que chegam aos consoles e PC neste mês de agosto.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-2', 'materia-2.html')">❤️ Curtir & Ler Notícia</button>
+                <p>Confira a lista completa dos principais títulos que chegam aos consoles e PC neste mês.</p>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-2.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-2" onclick="curtirMateria('novidade-2')">❤️ <span id="like-count-novidade-2">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Engine</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>3. Nova Engine Gráfica Revelada</h3>
                 <p>Desenvolvedores mostram renderização fotorrealista em tempo real rodando em placas intermediárias.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-3', 'materia-3.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-3.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-3" onclick="curtirMateria('novidade-3')">❤️ <span id="like-count-novidade-3">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Esports</span><span class="tempo-leitura">⏱️ 2 min</span></div>
                 <h3>4. Recorde de Audiência no E-sports</h3>
                 <p>A final mundial de jogos de luta atinge a marca de 3 milhões de espectadores simultâneos.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-4', 'materia-4.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-4.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-4" onclick="curtirMateria('novidade-4')">❤️ <span id="like-count-novidade-4">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Promoções</span><span class="tempo-leitura">⏱️ 2 min</span></div>
                 <h3>5. Grande Promoção na Steam e Consoles</h3>
                 <p>Mais de 500 jogos renomados com até 85% de desconto neste fim de semana especial.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-5', 'materia-5.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-5.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-5" onclick="curtirMateria('novidade-5')">❤️ <span id="like-count-novidade-5">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Séries</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>6. Adaptação de Franquia para Série</h3>
                 <p>Aclamado RPG de ação ganha teaser oficial e confirma data de estreia no serviço de streaming.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-6', 'materia-6.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-6.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-6" onclick="curtirMateria('novidade-6')">❤️ <span id="like-count-novidade-6">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Periféricos</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>7. Novo Periférico Sem Fio de Alta Precisão</h3>
                 <p>Mouse gamer ultra leve com taxa de resposta de 8000Hz chega oficialmente ao mercado brasileiro.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-7', 'materia-7.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-7.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-7" onclick="curtirMateria('novidade-7')">❤️ <span id="like-count-novidade-7">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Indies</span><span class="tempo-leitura">⏱️ 2 min</span></div>
                 <h3>8. Evento Indie com Demos Gratuitas</h3>
                 <p>Testes liberados para mais de 50 projetos de estúdios independentes no PC durante toda a semana.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-8', 'materia-8.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-8.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-8" onclick="curtirMateria('novidade-8')">❤️ <span id="like-count-novidade-8">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#DLC</span><span class="tempo-leitura">⏱️ 3 min</span></div>
                 <h3>9. Expansão Surpresa para Clássico dos Games</h3>
                 <p>Após anos sem atualizações, título recebe novo mapa, bosses e conquistas inéditas.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-9', 'materia-9.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-9.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-9" onclick="curtirMateria('novidade-9')">❤️ <span id="like-count-novidade-9">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card"><span class="tag">#Indústria</span><span class="tempo-leitura">⏱️ 4 min</span></div>
                 <h3>10. Fusão Entre Grandes Estúdios de Games</h3>
                 <p>Empresas gigantes unificam forças para produzir um MMORPG focado em exploração espacial.</p>
-                <button class="btn-copiar-pix" onclick="curtirELer('novidade-10', 'materia-10.html')">❤️ Curtir & Ler Notícia</button>
+                <div class="rodape-card">
+                    <button class="btn-card" onclick="lerMateria('materia-10.html')">📖 Ler Notícia</button>
+                    <button class="btn-like" id="btn-like-novidade-10" onclick="curtirMateria('novidade-10')">❤️ <span id="like-count-novidade-10">0</span></button>
+                </div>
             </article>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
-            <p style="margin-top: 0.4rem; color: #a8a8b3;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
-        </div>
+        <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+        <p style="margin-top: 0.4rem;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
     </footer>
 
-    <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">
-        ❤️ Doações Pix
-    </a>
+    <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">❤️ Doações Pix</a>
 
     <script src="script.js"></script>
 </body>
