@@ -47,7 +47,26 @@ nav a:hover, nav a.ativo {
     color: #04d361;
 }
 
-/* CONTAINER PRINCIPAL */
+/* HERO E CABEÇALHO DE SEÇÕES */
+.hero, .secao-titulo {
+    background-color: #1a1a1e;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-bottom: 1px solid #29292e;
+}
+
+.hero h1, .secao-titulo h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.hero p, .secao-titulo p {
+    color: #a8a8b3;
+    font-size: 1.1rem;
+}
+
+/* CONTAINER E GRID DE CARDS */
 .container {
     max-width: 1100px;
     margin: 2rem auto;
@@ -55,23 +74,78 @@ nav a:hover, nav a.ativo {
     flex: 1;
 }
 
-.secao-titulo {
-    text-align: center;
-    margin-bottom: 2rem;
+.container h2 {
+    color: #04d361;
+    margin-bottom: 1.5rem;
 }
 
-.secao-titulo h1 {
-    color: #ffffff;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+.grid, .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
-.secao-titulo p {
+.card {
+    background-color: #202024;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #29292e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #04d361;
+}
+
+.card h3 {
+    color: #04d361;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.card p {
     color: #a8a8b3;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
 }
 
-/* SORTEADOR E INDICAÇÕES */
+/* BOTÕES E LINKS */
+.btn-link {
+    display: inline-block;
+    color: #996dff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.btn-link:hover {
+    color: #04d361;
+    text-decoration: underline;
+}
+
+.btn-curtir {
+    background-color: #04d361;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.btn-curtir:hover {
+    background-color: #03b050;
+}
+
+/* SORTEADOR DE JOGOS */
 .box-sorteio {
     background-color: #202024;
     border-radius: 12px;
@@ -111,7 +185,7 @@ nav a:hover, nav a.ativo {
     display: none;
 }
 
-/* CARD DE DOAÇÕES E PIX */
+/* PÁGINA DE DOAÇÕES E PIX */
 .container-doacao {
     display: flex;
     justify-content: center;
