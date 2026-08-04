@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <div class="logo">🎮 GustaTech</div>
+        <a href="index.html" class="logo">🎮 GustaTech</a>
         <nav>
             <ul>
                 <li><a href="index.html" class="ativo">🏠 Início</a></li>
@@ -19,55 +19,80 @@
                 <li><a href="java.html">☕ Mundo Java</a></li>
                 <li><a href="indicacoes.html">🎲 Indicações</a></li>
             </ul>
+            <button id="btn-tema" class="btn-tema" onclick="alternarTema()">🌙 Escuro</button>
         </nav>
     </header>
 
     <section class="secao-titulo">
         <h1>🎮 O Universo dos Games em Um Só Lugar</h1>
-        <p>Seja bem-vindo ao portal oficial criado pelo Gusta. Explore as últimas matérias, guias e indicações abaixo!</p>
+        <p>Explore os principais conteúdos, guias e novidades com navegação ultrarrápida.</p>
+        
+        <div class="caixa-busca">
+            <input type="text" id="campo-busca" onkeyup="filtrarMaterias()" placeholder="🔍 Pesquise por jogos, temas ou novidades...">
+        </div>
     </section>
 
     <main class="container">
-        <h2 style="color: #04d361; margin-bottom: 1.5rem;">📌 Seções Principais</h2>
+        <h2 style="color: var(--cor-destaque); margin-bottom: 1.5rem;">📌 Seções em Destaque</h2>
         
         <div class="cards-grid">
             <article class="card">
+                <div class="meta-card">
+                    <span class="tag">#Notícias</span>
+                    <span class="tempo-leitura">⏱️ 3 min</span>
+                </div>
                 <h3>🔥 Últimas Novidades</h3>
-                <p>Fique por dentro das notícias mais recentes do mundo gamer, anúncios de consoles e eventos do setor.</p>
-                <a href="novidades.html" class="btn-copiar-pix" style="text-decoration: none; text-align: center; display: block;">Acessar Novidades</a>
+                <p>Fique por dentro das notícias mais recentes do mundo gamer, anúncios de consoles e feiras de e-sports.</p>
+                <div class="rodape-card">
+                    <a href="novidades.html" class="btn-card">Acessar Novidades</a>
+                    <button class="btn-like" onclick="curtirMateria('home-novidades')">❤️ <span id="like-count-home-novidades">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card">
+                    <span class="tag">#Lore</span>
+                    <span class="tempo-leitura">⏱️ 5 min</span>
+                </div>
                 <h3>🧠 Teorias & Lore</h3>
-                <p>Análises profundas, segredos ocultos e mistérios fascinantes escondidos nos seus jogos favoritos.</p>
-                <a href="teorias.html" class="btn-copiar-pix" style="text-decoration: none; text-align: center; display: block;">Ver Teorias</a>
+                <p>Análises profundas, segredos ocultos e mistérios fascinantes escondidos nas maiores franquias dos jogos.</p>
+                <div class="rodape-card">
+                    <a href="teorias.html" class="btn-card">Ver Teorias</a>
+                    <button class="btn-like" onclick="curtirMateria('home-teorias')">❤️ <span id="like-count-home-teorias">0</span></button>
+                </div>
             </article>
 
             <article class="card">
-                <h3>🛠️ Updates & Patch Notes</h3>
-                <p>Acompanhe em detalhes os últimos balanceamentos, buffs, nerfs e novas temporadas dos jogos online.</p>
-                <a href="updates.html" class="btn-copiar-pix" style="text-decoration: none; text-align: center; display: block;">Ver Updates</a>
+                <div class="meta-card">
+                    <span class="tag">#Patches</span>
+                    <span class="tempo-leitura">⏱️ 2 min</span>
+                </div>
+                <h3>🛠️ Updates & Balanceamento</h3>
+                <p>Acompanhe em detalhes os últimos patch notes, buffs, nerfs e novidades dos seus jogos competitivos.</p>
+                <div class="rodape-card">
+                    <a href="updates.html" class="btn-card">Ver Updates</a>
+                    <button class="btn-like" onclick="curtirMateria('home-updates')">❤️ <span id="like-count-home-updates">0</span></button>
+                </div>
             </article>
 
             <article class="card">
+                <div class="meta-card">
+                    <span class="tag">#Minecraft</span>
+                    <span class="tempo-leitura">⏱️ 4 min</span>
+                </div>
                 <h3>☕ Cantinho Java</h3>
-                <p>Tudo sobre Minecraft Java Edition, modpacks de otimização e a história dos clássicos em Java.</p>
-                <a href="java.html" class="btn-copiar-pix" style="text-decoration: none; text-align: center; display: block;">Explorar Mundo Java</a>
-            </article>
-
-            <article class="card">
-                <h3>🎲 Sorteador de Jogos</h3>
-                <p>Sem ideia do que jogar hoje? Utilize nossa ferramenta de indicação aleatória para encontrar um novo game.</p>
-                <a href="indicacoes.html" class="btn-copiar-pix" style="text-decoration: none; text-align: center; display: block;">Sortear Jogo</a>
+                <p>Tudo sobre Minecraft Java Edition, modpacks de otimização de FPS e tutoriais exclusivos.</p>
+                <div class="rodape-card">
+                    <a href="java.html" class="btn-card">Mundo Java</a>
+                    <button class="btn-like" onclick="curtirMateria('home-java')">❤️ <span id="like-count-home-java">0</span></button>
+                </div>
             </article>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
-            <p style="margin-top: 0.4rem; color: #a8a8b3;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
-        </div>
+        <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+        <p style="margin-top: 0.4rem;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
     </footer>
 
     <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">

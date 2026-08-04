@@ -9,26 +9,27 @@
 <body>
 
     <header>
-        <div class="logo">🎮 GustaTech</div>
+        <a href="index.html" class="logo">🎮 GustaTech</a>
         <nav>
             <ul>
                 <li><a href="index.html">🏠 Início</a></li>
-                <li><a href="novidades.html" target="_blank">🔥 Novidades</a></li>
-                <li><a href="teorias.html" target="_blank">🧠 Teorias</a></li>
-                <li><a href="updates.html" target="_blank">🛠️ Updates</a></li>
-                <li><a href="java.html" target="_blank">☕ Mundo Java</a></li>
-                <li><a href="indicacoes.html" target="_blank">🎲 Indicações</a></li>
+                <li><a href="novidades.html">🔥 Novidades</a></li>
+                <li><a href="teorias.html">🧠 Teorias</a></li>
+                <li><a href="updates.html">🛠️ Updates</a></li>
+                <li><a href="java.html">☕ Mundo Java</a></li>
+                <li><a href="indicacoes.html">🎲 Indicações</a></li>
             </ul>
+            <button id="btn-tema" class="btn-tema" onclick="alternarTema()">🌙 Escuro</button>
         </nav>
     </header>
 
     <main class="container-doacao">
         <div class="card-pix-destaque">
-            <div class="icone-coracao">❤️</div>
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">❤️</div>
             <h2>Apoie o GustaTech</h2>
             
-            <p class="mensagem-boas-vindas">
-                Se você gosta dos conteúdos, novidades e ferramentas do portal, considere fazer uma contribuição para manter o site no ar e sempre atualizado!
+            <p style="color: var(--texto-secundario); font-size: 0.98rem; margin-bottom: 1.5rem;">
+                Se você curte os conteúdos e as ferramentas do portal, considere apoiar para mantermos o servidor no ar!
             </p>
 
             <div class="box-chave-pix">
@@ -36,22 +37,17 @@
                 <div class="valor-chave-pix" id="chave-pix">gustavopix2555@gmail.com</div>
             </div>
 
-            <button class="btn-copiar-pix" onclick="copiarPix()">📋 Copiar Chave PIX</button>
-            <p id="msg-sucesso" class="msg-sucesso">✅ Chave PIX copiada para a área de transferência!</p>
-
-            <div class="detalhe-info">
-                💡 <strong>Como doar:</strong> Clique no botão acima para copiar a chave, abra o app do seu banco (Nubank, Inter, Caixa, Itaú, etc.), selecione <strong>PIX > E-mail / Copia e Cola</strong>, cole a chave e escolha qualquer valor para enviar!
-            </div>
+            <button class="btn-card" style="width: 100%; font-size: 1rem;" onclick="copiarPix()">📋 Copiar Chave PIX</button>
+            <p id="msg-sucesso" style="color: var(--cor-destaque); font-weight: bold; font-size: 0.9rem; margin-top: 0.8rem; display: none;">✅ Chave PIX copiada com sucesso!</p>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
-            <p class="direitos-autorais">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
-        </div>
+        <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+        <p style="margin-top: 0.4rem;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
     </footer>
 
+    <script src="script.js"></script>
     <script>
         function copiarPix() {
             const chave = document.getElementById("chave-pix").innerText;

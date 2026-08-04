@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GustaTech - Indicações de Jogos</title>
+    <title>GustaTech - Indicações & Enquetes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">🎮 GustaTech</div>
+        <a href="index.html" class="logo">🎮 GustaTech</a>
         <nav>
             <ul>
                 <li><a href="index.html">🏠 Início</a></li>
@@ -19,30 +19,39 @@
                 <li><a href="java.html">☕ Mundo Java</a></li>
                 <li><a href="indicacoes.html" class="ativo">🎲 Indicações</a></li>
             </ul>
+            <button id="btn-tema" class="btn-tema" onclick="alternarTema()">🌙 Escuro</button>
         </nav>
     </header>
 
     <section class="secao-titulo">
-        <h1>🎲 Sorteador de Jogos & Indicações</h1>
-        <p>Sem saber o que jogar hoje? Clique no botão abaixo para receber uma recomendação aleatória do nosso banco de dados!</p>
+        <h1>🎲 Central da Comunidade</h1>
+        <p>Encontre o seu próximo jogo e vote na enquete semanal do GustaTech.</p>
     </section>
 
     <main class="container">
         <div class="box-sorteio">
-            <h3>🎮 Quer uma recomendação de jogo?</h3>
-            <p>Temos dezenas de jogos incríveis cadastrados para você experimentar!</p>
+            <h3>🎮 Sorteador de Jogos</h3>
+            <p>Clique no botão abaixo para receber uma recomendação aleatória instantânea!</p>
             
-            <button class="btn-sortear" onclick="indicarJogo()">🎲 Sortear um Jogo Aleatório</button>
-
+            <button class="btn-sortear" onclick="indicarJogo()">🎲 Sortear Jogo</button>
             <div id="resultado-indicacao" class="resultado-jogo"></div>
+        </div>
+
+        <div class="box-enquete">
+            <h3>📊 Enquete da Semana</h3>
+            <p><strong>Qual o seu estilo de jogo preferido?</strong></p>
+            
+            <div class="opcoes-enquete">
+                <div class="opcao-item" onclick="votarEnquete('RPG / Mundo Aberto')"><span>🗡️ RPG / Mundo Aberto</span> <span>Votar</span></div>
+                <div class="opcao-item" onclick="votarEnquete('FPS / Competitivo')"><span>🎯 FPS / Tiro</span> <span>Votar</span></div>
+                <div class="opcao-item" onclick="votarEnquete('Indie / Metroidvania')"><span>🎨 Indie / Metroidvania</span> <span>Votar</span></div>
+            </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
-            <p style="margin-top: 0.4rem; color: #a8a8b3;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
-        </div>
+        <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
+        <p style="margin-top: 0.4rem;">Desenvolvido por <strong>Gusta (Gustavo)</strong> &copy;</p>
     </footer>
 
     <a href="doacoes.html" target="_blank" class="btn-doacao-fixo">

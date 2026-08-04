@@ -1,14 +1,39 @@
+/* VARIÁVEIS DE CORES (TEMA ESCURO PADRÃO) */
+:root {
+    --bg-principal: #121214;
+    --bg-card: #202024;
+    --bg-secundario: #1a1a1e;
+    --texto-principal: #e1e1e6;
+    --texto-secundario: #a8a8b3;
+    --cor-destaque: #04d361;
+    --cor-destaque-hover: #03b050;
+    --borda: #29292e;
+}
+
+/* TEMA CLARO */
+body.light-theme {
+    --bg-principal: #f0f2f5;
+    --bg-card: #ffffff;
+    --bg-secundario: #e4e6eb;
+    --texto-principal: #1c1e21;
+    --texto-secundario: #606770;
+    --cor-destaque: #10b981;
+    --cor-destaque-hover: #059669;
+    --borda: #d1d5db;
+}
+
 /* RESET E ESTILOS GERAIS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body {
-    background-color: #121214;
-    color: #e1e1e6;
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -16,57 +41,102 @@ body {
 
 /* CABEÇALHO E NAVEGAÇÃO */
 header {
-    background-color: #202024;
+    background-color: var(--bg-card);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #04d361;
+    border-bottom: 2px solid var(--cor-destaque);
+    sticky: top;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #04d361;
+    color: var(--cor-destaque);
     text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 nav a {
-    color: #a8a8b3;
+    color: var(--texto-secundario);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.2s;
 }
 
 nav a:hover, nav a.ativo {
-    color: #04d361;
+    color: var(--cor-destaque);
 }
 
-/* TÍTULOS E CONTAINER */
+/* BOTÃO DE INTERRUPTOR DE TEMA (DARK/LIGHT) */
+.btn-tema {
+    background: transparent;
+    border: 1px solid var(--borda);
+    color: var(--texto-principal);
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* TÍTULOS E BUSCA */
 .secao-titulo {
-    background-color: #1a1a1e;
+    background-color: var(--bg-secundario);
     text-align: center;
     padding: 2.5rem 1rem;
-    border-bottom: 1px solid #29292e;
+    border-bottom: 1px solid var(--borda);
 }
 
 .secao-titulo h1 {
-    font-size: 2rem;
-    color: #ffffff;
+    font-size: 2.2rem;
+    color: var(--texto-principal);
     margin-bottom: 0.5rem;
 }
 
 .secao-titulo p {
-    color: #a8a8b3;
+    color: var(--texto-secundario);
     font-size: 1.1rem;
+    margin-bottom: 1.2rem;
 }
 
+.caixa-busca {
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.caixa-busca input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    border: 1px solid var(--borda);
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    font-size: 1rem;
+    outline: none;
+}
+
+.caixa-busca input:focus {
+    border-color: var(--cor-destaque);
+}
+
+/* CONTAINER E CARDS */
 .container {
     max-width: 1100px;
     margin: 2rem auto;
@@ -75,7 +145,6 @@ nav a:hover, nav a.ativo {
     width: 100%;
 }
 
-/* CARDS E GRID */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -83,91 +152,149 @@ nav a:hover, nav a.ativo {
 }
 
 .card {
-    background-color: #202024;
-    border-radius: 8px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
     padding: 1.5rem;
-    border: 1px solid #29292e;
+    border: 1px solid var(--borda);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s, border-color 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    border-color: #04d361;
+    transform: translateY(-5px);
+    border-color: var(--cor-destaque);
 }
 
-.card h3 {
-    color: #04d361;
+.meta-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 0.8rem;
 }
 
+.tag {
+    background-color: rgba(4, 211, 97, 0.15);
+    color: var(--cor-destaque);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.tempo-leitura {
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+}
+
+.card h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
 .card p {
-    color: #a8a8b3;
+    color: var(--texto-secundario);
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1.2rem;
 }
 
-/* ESTILO DA PÁGINA DE INDICAÇÕES (SORTEADOR) */
-.box-sorteio {
-    background-color: #202024;
-    border-radius: 12px;
-    padding: 2.5rem 2rem;
+.rodape-card {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-card {
+    background-color: var(--cor-destaque);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
     text-align: center;
-    border: 1px solid #29292e;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-card:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+.btn-like {
+    background-color: var(--bg-secundario);
+    color: var(--texto-principal);
+    border: 1px solid var(--borda);
+    padding: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* INDICAÇÕES E ENQUETE */
+.box-sorteio, .box-enquete {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--borda);
     max-width: 650px;
     margin: 1.5rem auto;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-.box-sorteio h3 {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-}
-
-.box-sorteio p {
-    color: #a8a8b3;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.btn-sortear {
-    background-color: #04d361;
-    color: #000000;
+.btn-sortear, .btn-votar {
+    background-color: var(--cor-destaque);
+    color: #000;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border: none;
-    padding: 0.9rem 2rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 1.5rem;
-    width: 100%;
-    max-width: 350px;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.btn-sortear:hover {
-    background-color: #03b050;
-    transform: scale(1.03);
+    margin-top: 1rem;
 }
 
 .resultado-jogo {
-    margin-top: 1.8rem;
-    background-color: #121214;
-    padding: 1.5rem;
+    margin-top: 1.5rem;
+    background-color: var(--bg-principal);
+    padding: 1.2rem;
     border-radius: 8px;
-    border-left: 4px solid #04d361;
+    border-left: 4px solid var(--cor-destaque);
     text-align: left;
     display: none;
-    color: #e1e1e6;
-    font-size: 1rem;
-    line-height: 1.6;
 }
 
-/* PÁGINA DE DOAÇÕES E PIX */
+.opcoes-enquete {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    text-align: left;
+}
+
+.opcao-item {
+    background-color: var(--bg-principal);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.opcao-item:hover {
+    border-color: var(--cor-destaque);
+}
+
+/* DOAÇÃO E PIX */
 .container-doacao {
     display: flex;
     justify-content: center;
@@ -177,129 +304,60 @@ nav a:hover, nav a.ativo {
 }
 
 .card-pix-destaque {
-    background-color: #202024;
-    border: 2px solid #04d361;
+    background-color: var(--bg-card);
+    border: 2px solid var(--cor-destaque);
     border-radius: 16px;
     padding: 2.5rem 2rem;
     max-width: 520px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(4, 211, 97, 0.2);
-}
-
-.icone-coracao {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-pix-destaque h2 {
-    color: #ffffff;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.mensagem-boas-vindas {
-    color: #c4c4cc;
-    font-size: 0.98rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 30px rgba(4, 211, 97, 0.15);
 }
 
 .box-chave-pix {
-    background-color: #121214;
-    border: 2px dashed #04d361;
+    background-color: var(--bg-principal);
+    border: 2px dashed var(--cor-destaque);
     border-radius: 8px;
     padding: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin: 1.2rem 0;
 }
 
 .label-pix {
-    color: #04d361;
+    color: var(--cor-destaque);
     font-size: 0.85rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .valor-chave-pix {
-    color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: bold;
     word-break: break-all;
 }
 
-.btn-copiar-pix {
-    background-color: #04d361;
-    color: #000000;
-    font-weight: bold;
-    font-size: 1rem;
-    border: none;
-    padding: 0.9rem;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.btn-copiar-pix:hover {
-    background-color: #03b050;
-    transform: translateY(-2px);
-}
-
-.msg-sucesso {
-    color: #04d361;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-top: 0.8rem;
-    display: none;
-}
-
-.detalhe-info {
-    color: #a8a8b3;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    margin-top: 1.5rem;
-    background-color: #121214;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #29292e;
-    text-align: left;
-}
-
-/* BOTÃO FLUTUANTE DE DOAÇÃO */
 .btn-doacao-fixo {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: #04d361;
-    color: #000000;
+    background-color: var(--cor-destaque);
+    color: #000;
     font-weight: bold;
     padding: 12px 20px;
     border-radius: 30px;
     text-decoration: none;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
     z-index: 9999;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1rem;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.btn-doacao-fixo:hover {
-    background-color: #03b050;
-    transform: scale(1.08);
 }
 
 /* RODAPÉ */
 footer {
-    background-color: #202024;
+    background-color: var(--bg-card);
     text-align: center;
     padding: 1.5rem;
-    border-top: 1px solid #29292e;
+    border-top: 1px solid var(--borda);
     margin-top: auto;
-    color: #737380;
+    color: var(--texto-secundario);
     font-size: 0.9rem;
 }
