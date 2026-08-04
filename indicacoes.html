@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎲 Indicações - Portal Gamer</title>
+    <title>GustaTech - Indicações de Jogos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,30 +22,32 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>🎲 Recomendador de Jogos do Gusta</h1>
-        <p>Clique no botão para sortear um jogo completo com sinopse e história detalhada!</p>
-    </section>
-
     <main class="container">
-        <div class="card-indicacao">
-            <h3>Não sabe o que jogar?</h3>
-            <p>O algoritmo escolhe um título e apresenta a sinopse completa.</p>
-            <button id="btn-indicar" onclick="indicarJogo()">🎲 Sortear Jogo com Sinopse</button>
-            <div id="resultado-indicacao" class="resultado-box"></div>
+        <section class="secao-titulo">
+            <h1>🎲 Sorteador de Jogos & Indicações</h1>
+            <p>Está sem saber o que jogar hoje? Clique no botão abaixo para receber uma indicação completa com gênero, sinopse e plataformas!</p>
+        </section>
+
+        <div class="box-sorteio">
+            <h3>🎮 Quer uma recomendação de jogo?</h3>
+            <p style="color: #a8a8b3; margin-top: 0.5rem;">Temos mais de 50 jogos cadastrados em nosso banco de dados!</p>
+            <button class="btn-sortear" onclick="indicarJogo()">🎲 Sortear um Jogo Aleatório</button>
+
+            <div id="resultado-indicacao" class="resultado-jogo"></div>
         </div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Portal Gamer - Todos os direitos reservados.</p>
+            <p>&copy; 2026 GustaTech - Todos os direitos reservados.</p>
             <p class="direitos-autorais">Desenvolvido por <strong>Gusta (Gustavo)</strong> - Direitos Autorais Reservados &copy;</p>
         </div>
     </footer>
 
+    <a href="doacoes.html" class="btn-doacao-fixo">
+        ❤️ Doações Pix
+    </a>
+
     <script src="script.js"></script>
-<a href="doacoes.html" class="btn-doacao-fixo">
-    ❤️ Doações Pix
-</a>
 </body>
 </html>
